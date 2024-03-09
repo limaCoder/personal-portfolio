@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "@/app/ui/globals.css";
 
-import { mukta } from "./ui/fonts";
+import { mukta } from "../ui/fonts";
 
 export const metadata: Metadata = {
   title: "Mario Lima | Portfólio",
