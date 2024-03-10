@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export function Header() {
   return (
-    <header className="w-full m-h-[100px] fixed z-30 mt-3">
-      <div className="container border-2 border-t-custom_primary-dark border-r-custom_primary border-l-custom_primary border-b-custom_primary-light rounded-[20px] py-3 flex flex-row justify-between items-center lg:max-w-[1216px] bg-transparent">
+    <header className="w-full m-h-[100px] fixed z-30 bg-custom_black-dark">
+      <div className="container py-5 flex flex-row justify-between items-center lg:max-w-[1216px]">
         <div>
           <Image
             src="/logo/logo.svg"

@@ -37,6 +37,7 @@ const config: Config = {
     extend: {
       animation: {
         shimmer: "shimmer 2s linear infinite",
+        carousel_images: "carousel_images 25s ease-in-out infinite alternate",
       },
       keyframes: {
         shimmer: {
@@ -47,6 +48,14 @@ const config: Config = {
             backgroundPosition: "-200% 0",
           },
         },
+        carousel_images: {
+          from: {
+            transform: "translate3d(0, -64px, 0) translateX(0%)",
+          },
+          to: {
+            transform: "translate3d(0, -64px, 0) translateX(-100%)",
+          },
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -55,7 +64,7 @@ const config: Config = {
         gradient_primary:
           "linear-gradient(90deg, rgba(104,103,242,1) 0%, rgba(70,115,210,1) 100%)",
         gradient_secondary:
-          "linear-gradient(90deg, rgba(55,55,65,1) 0%, rgba(83,82,237,1) 100%)",
+          "linear-gradient(0deg, rgba(16,15,18,1) 65%, rgba(70,115,210,1) 100%);",
         gradient_light:
           "linear-gradient(90deg, rgba(241,241,246,1) 0%, rgba(211,211,215,1) 100%)",
         gradient_dark:

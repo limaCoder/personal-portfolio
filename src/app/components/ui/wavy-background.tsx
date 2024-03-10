@@ -114,12 +114,12 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center",
+        "h-full flex flex-col items-center justify-center",
         containerClassName
       )}
     >
       <canvas
-        className="absolute inset-0 z-0"
+        className="absolute w-full h-full inset-0 z-0"
         ref={canvasRef}
         id="canvas"
         style={{
@@ -127,7 +127,7 @@ export const WavyBackground = ({
         }}
       ></canvas>
       <div className="absolute inset-0 z-10 bg-black opacity-50"></div>
-      <div className={cn("relative z-10", className)} {...props}>
+      <div className={cn("w-full h-full relative z-10", className)} {...props}>
         {children}
       </div>
     </div>

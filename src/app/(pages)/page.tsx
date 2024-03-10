@@ -1,5 +1,8 @@
 import React from "react";
+
 import { HeroSection } from "./sections/Hero";
+import { AboutSection } from "./sections/About";
+
 import { Header } from "../components/Header";
 
 export default function Home() {
@@ -8,6 +11,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <AboutSection />
       </main>
     </React.Fragment>
   );
