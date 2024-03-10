@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/ui/globals.css";
-import { cn } from "../lib/utils";
+import { cn } from "@/app/lib/cn";
 import { fontMuktaVariable, fontSairaVariable } from "../ui/fonts";
 
 export const metadata: Metadata = {

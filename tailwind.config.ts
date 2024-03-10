@@ -35,10 +35,31 @@ const config: Config = {
       "accordion-up": "accordion-up 0.2s ease-out",
     },
     extend: {
+      animation: {
+        shimmer: "shimmer 2s linear infinite",
+      },
+      keyframes: {
+        shimmer: {
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
+          },
+        },
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        gradient_primary:
+          "linear-gradient(90deg, rgba(104,103,242,1) 0%, rgba(70,115,210,1) 100%)",
+        gradient_secondary:
+          "linear-gradient(90deg, rgba(55,55,65,1) 0%, rgba(83,82,237,1) 100%)",
+        gradient_light:
+          "linear-gradient(90deg, rgba(241,241,246,1) 0%, rgba(211,211,215,1) 100%)",
+        gradient_dark:
+          "linear-gradient(90deg, rgba(20,20,24,1) 0%, rgba(51,51,55,1) 100%)",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -86,22 +107,13 @@ const config: Config = {
         },
         custom_white: {
           DEFAULT: "#F1F1F6",
-          light: "#6867F2",
-          dark: "#F5F5F9",
+          light: "#F5F5F9",
+          dark: "#D3D3D7",
         },
         custom_black: {
           DEFAULT: "#141418",
           light: "#333337",
           dark: "#0F0F12",
-        },
-        custom_gradient: {
-          primary:
-            "linear-gradient(90deg, rgba(104,103,242,1) 0%, rgba(70,115,210,1) 100%)",
-          secondary:
-            "linear-gradient(90deg, rgba(55,55,65,1) 0%, rgba(83,82,237,1) 100%);",
-          light:
-            "linear-gradient(90deg, rgba(241,241,246,1) 0%, rgba(211,211,215,1) 100%);",
-          dark: "linear-gradient(90deg, rgba(20,20,24,1) 0%, rgba(51,51,55,1) 100%);",
         },
       },
     },
