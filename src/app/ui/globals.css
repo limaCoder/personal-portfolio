@@ -74,6 +74,10 @@
     @apply bg-background text-foreground;
   }
 
+  a, button {
+    cursor: pointer;
+  }
+
   .font-headline_one {
     font-family: var(--font-saira);
     font-weight: 400;
