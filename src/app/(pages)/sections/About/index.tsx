@@ -7,10 +7,10 @@ export function AboutSection() {
   return (
     <section className="h-screen w-full relative pb-16">
       <div className="w-full h-screen p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
-        <div className="flex flex-row justify-start items-start animate-carousel_images">
+        <div className="w-full h-full flex flex-row justify-start items-start animate-carousel_images">
           {carouselImages.map((carouselImage) => (
             <Image
-              className="border-r-2 border-r-custom_primary"
+              className="border-r-2 max-w-[590px] h-[1080px] border-r-custom_primary"
               key={carouselImage.id}
               src={carouselImage.src}
               alt={carouselImage.alt}

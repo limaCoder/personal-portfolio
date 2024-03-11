@@ -5,7 +5,7 @@ import { WavyBackground } from "@/app/components/ui/wavy-background";
 
 export function HeroSection() {
   return (
-    <section className="h-screen w-full bg-gradient_dark relative pt-40">
+    <section className="h-screen w-full bg-gradient_dark relative py-40">
       <WavyBackground>
         <div className="container h-full flex lg:flex-row justify-around items-center z-20 relative">
           <div className="max-w-[372px]">
