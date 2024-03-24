@@ -7,6 +7,7 @@ import { ExperiencesSection } from "./sections/Experiences";
 import { ProjectsSection } from "./sections/Projects";
 
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ExperiencesSection />
         <ProjectsSection />
       </main>
+      <Footer />
     </React.Fragment>
   );
 }
