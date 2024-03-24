@@ -4,6 +4,7 @@ import { HeroSection } from "./sections/Hero";
 import { AboutSection } from "./sections/About";
 import { ServicesSection } from "./sections/Services";
 import { ExperiencesSection } from "./sections/Experiences";
+import { ProjectsSection } from "./sections/Projects";
 
 import { Header } from "../components/Header";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <AboutSection />
         <ServicesSection />
         <ExperiencesSection />
+        <ProjectsSection />
       </main>
     </React.Fragment>
   );

@@ -6,10 +6,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/app/components/ui/accordion";
+
 import { GridBackground } from "@/app/components/ui/grid-and-dot-background";
+
 import { FiGlobe, FiSmartphone } from "react-icons/fi";
-import Spline from "@splinetool/react-spline";
 import { BsCursorFill } from "react-icons/bs";
+
+import Spline from "@splinetool/react-spline";
 
 export function ServicesSection() {
   return (
