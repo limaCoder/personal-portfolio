@@ -3,4 +3,5 @@ export interface ISkillProps {
   name: string;
   image: string;
   alternativeText: string;
+  description: string;
 }
