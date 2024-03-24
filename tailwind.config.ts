@@ -77,6 +77,8 @@ const config: Config = {
           "linear-gradient(90deg, rgba(241,241,246,1) 0%, rgba(211,211,215,1) 100%)",
         gradient_dark:
           "linear-gradient(90deg, rgba(20,20,24,1) 0%, rgba(51,51,55,1) 100%)",
+        gradient_dark_vertical:
+          "linear-gradient(0deg, rgba(51,51,55,1) 50%, rgba(20,20,24,1) 100%);",
       },
       colors: {
         border: "hsl(var(--border))",
