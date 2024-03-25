@@ -129,8 +129,8 @@
 
   .font-body_three {
     font-family: var(--font-mukta);
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 300;
+    font-size: 16px;
     line-height: 120%;
   }
 }
