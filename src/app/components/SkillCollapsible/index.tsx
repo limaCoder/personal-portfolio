@@ -12,6 +12,7 @@ import {
 } from "../ui/collapsible";
 
 import { ISkillCollapsibleProps } from "./types";
+import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
 export function SkillCollapsible({
   skillType,
@@ -34,39 +35,47 @@ export function SkillCollapsible({
   };
 
   return (
-    <Collapsible
-      defaultOpen={skillType === "Front-end" ? true : false}
-      className="flex flex-col justify-center items-center gap-12"
+    <motion.div
+      variants={scrollVariants}
+      initial="hidden"
+      whileInView="visible"
+      custom={3}
+      viewport={{ once: false }}
     >
-      <CollapsibleTrigger className="flex flex-row gap-3 hover:brightness-150 active:backdrop-brightness-200 transition active:scale-95">
-        <h3 className="font-headline_three text-custom_white-light">
-          {skillType}
-        </h3>
-        <div className="flex flex-col">
-          <FiChevronUp size={24} className="text-custom_primary" />
-          <FiChevronDown size={24} className="text-custom_primary" />
-        </div>
-      </CollapsibleTrigger>
-      <AnimatePresence>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <CollapsibleContent className="flex flex-row justify-center items-center flex-wrap gap-6 max-w-[920px] gap-y-10">
-            {skills.map((skill) => (
-              <motion.div key={skill.id} variants={childVariants}>
-                <Skill
-                  name={skill.name}
-                  image={skill.image}
-                  alternativeText={skill.alternativeText}
-                  description={skill.description}
-                />
-              </motion.div>
-            ))}
-          </CollapsibleContent>
-        </motion.div>
-      </AnimatePresence>
-    </Collapsible>
+      <Collapsible
+        defaultOpen={skillType === "Front-end" ? true : false}
+        className="flex flex-col justify-center items-center gap-12"
+      >
+        <CollapsibleTrigger className="flex flex-row gap-3 hover:brightness-150 active:backdrop-brightness-200 transition active:scale-95">
+          <h3 className="font-headline_three text-custom_white-light">
+            {skillType}
+          </h3>
+          <div className="flex flex-col">
+            <FiChevronUp size={24} className="text-custom_primary" />
+            <FiChevronDown size={24} className="text-custom_primary" />
+          </div>
+        </CollapsibleTrigger>
+        <AnimatePresence>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            <CollapsibleContent className="flex flex-row justify-center items-center flex-wrap gap-6 max-w-[920px] gap-y-10">
+              {skills.map((skill) => (
+                <motion.div key={skill.id} variants={childVariants}>
+                  <Skill
+                    name={skill.name}
+                    image={skill.image}
+                    alternativeText={skill.alternativeText}
+                    description={skill.description}
+                  />
+                </motion.div>
+              ))}
+            </CollapsibleContent>
+          </motion.div>
+        </AnimatePresence>
+      </Collapsible>
+    </motion.div>
   );
 }

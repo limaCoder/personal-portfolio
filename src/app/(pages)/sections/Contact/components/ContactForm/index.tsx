@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
+import { motion } from "framer-motion";
 import { FiArrowUpCircle } from "react-icons/fi";
 
 import { Button } from "@/app/components/ui/button";
@@ -17,6 +18,8 @@ import {
 } from "@/app/components/ui/form";
 import { Input } from "@/app/components/ui/input";
 import { Textarea } from "@/app/components/ui/textarea";
+
+import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -52,9 +55,14 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
+      <motion.form
         className="flex flex-col gap-8"
+        onSubmit={form.handleSubmit(onSubmit)}
+        variants={scrollVariants}
+        initial="hidden"
+        whileInView="visible"
+        custom={5}
+        viewport={{ once: false }}
       >
         <FormField
           control={form.control}
@@ -62,7 +70,7 @@ export function ContactForm() {
           render={({ field }) => (
             <FormItem>
               <FormLabel className="font-body_two text-custom_primary">
-                Username
+                Name
               </FormLabel>
               <FormControl>
                 <Input
@@ -137,7 +145,7 @@ export function ContactForm() {
             Submit
           </span>
         </Button>
-      </form>
+      </motion.form>
     </Form>
   );
 }

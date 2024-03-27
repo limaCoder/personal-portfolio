@@ -1,7 +1,12 @@
-import { projects } from "./projects";
+"use client";
+
+import { motion } from "framer-motion";
 
 import { BackgroundBeams } from "@/app/components/ui/background-beams";
 import { Project } from "@/app/components/Project";
+
+import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { projects } from "./projects";
 
 export function ProjectsSection() {
   return (
@@ -9,12 +14,26 @@ export function ProjectsSection() {
       <div className="container relative h-full w-full z-20">
         <div className="flex flex-col gap-20">
           <div className="flex flex-col gap-8">
-            <h2 className="font-headline_one text-custom_secondary-light">
+            <motion.h2
+              className="font-headline_one text-custom_secondary-light"
+              variants={scrollVariants}
+              initial="hidden"
+              whileInView="visible"
+              custom={1}
+              viewport={{ once: false }}
+            >
               Projects
-            </h2>
-            <p className="font-body_two text-custom_white-dark">
+            </motion.h2>
+            <motion.p
+              className="font-body_two text-custom_white-dark"
+              variants={scrollVariants}
+              initial="hidden"
+              whileInView="visible"
+              custom={2}
+              viewport={{ once: false }}
+            >
               Here are some of the personal projects I have worked on.
-            </p>
+            </motion.p>
           </div>
           <div className="flex flex-col">
             {projects.map((project) => (

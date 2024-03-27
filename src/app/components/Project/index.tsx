@@ -1,7 +1,11 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import { IProjectProps } from "./types";
+import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
 export function Project({
   projectName,
@@ -11,7 +15,14 @@ export function Project({
 }: IProjectProps) {
   return (
     <div className="flex flex-row justify-between items-center border-y-2 py-8 pr-8 border-y-custom_white-dark">
-      <div className="flex flex-col gap-6">
+      <motion.div
+        className="flex flex-col gap-6"
+        variants={scrollVariants}
+        initial="hidden"
+        whileInView="visible"
+        custom={3}
+        viewport={{ once: false }}
+      >
         <h3 className="font-headline_two text-custom_white-light">
           {projectName}
         </h3>
@@ -26,8 +37,15 @@ export function Project({
             {techName}
           </span>
         </div>
-      </div>
-      <div className="flex flex-col">
+      </motion.div>
+      <motion.div
+        className="flex flex-col"
+        variants={scrollVariants}
+        initial="hidden"
+        whileInView="visible"
+        custom={4}
+        viewport={{ once: false }}
+      >
         <a className="cursor-pointer hover:brightness-150 transition" href="#">
           <div className="flex flex-row gap-4">
             <span className="font-body_one text-custom_primary-light">
@@ -36,7 +54,7 @@ export function Project({
             <FiArrowUpRight size={24} className="text-custom_primary-light" />
           </div>
         </a>
-      </div>
+      </motion.div>
     </div>
   );
 }
