@@ -18,7 +18,7 @@ import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
 export function ServicesSection() {
   return (
-    <section>
+    <section id="services">
       <GridBackground>
         <div className="container min-h-full w-full z-10">
           <div className="flex flex-row w-full h-full justify-around">

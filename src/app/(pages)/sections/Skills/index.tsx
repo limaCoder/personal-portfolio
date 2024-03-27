@@ -8,7 +8,10 @@ import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
 export function SkillsSection() {
   return (
-    <section className="min-h-screen w-full relative py-20 bg-gradient_dark">
+    <section
+      id="skills"
+      className="min-h-screen w-full relative py-20 bg-gradient_dark"
+    >
       <div className="container h-full w-full">
         <div className="flex flex-col gap-14">
           <div className="flex flex-col justify-center items-center gap-8">

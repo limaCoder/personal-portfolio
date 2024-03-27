@@ -14,7 +14,10 @@ import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
 export function ContactSection() {
   return (
-    <section className="min-h-screen w-full relative py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02] overflow-hidden">
+    <section
+      id="contact"
+      className="min-h-screen w-full relative py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02] overflow-hidden"
+    >
       <motion.div
         variants={scrollVariants}
         initial="hidden"

@@ -10,7 +10,10 @@ import { projects } from "./projects";
 
 export function ProjectsSection() {
   return (
-    <section className="min-h-screen w-full relative py-20 bg-gradient_dark">
+    <section
+      id="projects"
+      className="min-h-screen w-full relative py-20 bg-gradient_dark"
+    >
       <div className="container relative h-full w-full z-20">
         <div className="flex flex-col gap-20">
           <div className="flex flex-col gap-8">
