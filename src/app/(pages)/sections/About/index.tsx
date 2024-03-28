@@ -1,13 +1,17 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiInfo } from "react-icons/fi";
 
 import { carouselImages } from "./carouselImages";
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
-export function AboutSection() {
+import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
+import {
+  MotionDiv,
+  MotionHeadlineTwo,
+  MotionParagraph,
+} from "@/app/lib/framer-motion/MotionComponents";
+
+export async function AboutSection() {
   return (
     <section id="about" className="h-screen w-full relative pb-16">
       <div className="w-full h-screen p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
@@ -27,24 +31,24 @@ export function AboutSection() {
       <div className="absolute inset-0 z-10 bg-gradient_secondary opacity-90"></div>
       <div className="z-20 container flex flex-col justify-end items-center relative h-full">
         <div className="flex flex-col justify-center gap-10">
-          <motion.h2
+          <MotionHeadlineTwo
             className="font-headline_one text-custom_white-light"
             variants={scrollVariants}
             initial="hidden"
             whileInView="visible"
-            custom={1}
+            transition={await scrollTransition(1)}
             viewport={{ once: false }}
           >
             About me
-          </motion.h2>
+          </MotionHeadlineTwo>
           <div className="flex flex-row gap-14">
             <div className="flex flex-col max-w-[425px]">
-              <motion.p
+              <MotionParagraph
                 className="mb-6 text-custom_white-dark font-body_two"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={2}
+                transition={await scrollTransition(2)}
                 viewport={{ once: false }}
               >
                 I am a passionate Frontend Developer with a self-taught journey
@@ -54,13 +58,13 @@ export function AboutSection() {
                 the world of web and mobile development, with cutting-edge
                 technologies like ReactJS, React Native, Next.js, and
                 TypeScript.
-              </motion.p>
-              <motion.p
+              </MotionParagraph>
+              <MotionParagraph
                 className="mb-6 text-custom_white-dark font-body_two"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={3}
+                transition={await scrollTransition(3)}
                 viewport={{ once: false }}
               >
                 My professional journey is distinguished by collaborations with
@@ -69,27 +73,27 @@ export function AboutSection() {
                 technical skills but also endowed me with a deep understanding
                 of diverse business needs and the importance of delivering
                 scalable and impactful digital solutions.
-              </motion.p>
-              <motion.p
+              </MotionParagraph>
+              <MotionParagraph
                 className="text-custom_white-dark font-body_two"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={4}
+                transition={await scrollTransition(4)}
                 viewport={{ once: false }}
               >
                 Embracing continuous learning and improvement, I leverage every
                 project as an opportunity to advance my expertise and contribute
                 meaningfully to the field of technology.
-              </motion.p>
+              </MotionParagraph>
             </div>
             <div className="flex flex-col gap-14">
-              <motion.div
+              <MotionDiv
                 className="flex flex-col gap-4"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={5}
+                transition={await scrollTransition(5)}
                 viewport={{ once: false }}
               >
                 <div className="flex flex-row gap-4">
@@ -112,13 +116,13 @@ export function AboutSection() {
                     technology
                   </p>
                 </div>
-              </motion.div>
-              <motion.div
+              </MotionDiv>
+              <MotionDiv
                 className="flex flex-col max-w-[352px] h-[208px] px-4 py-6 gap-5 bg-gradient_dark border-r-2 border-b-2 border-r-custom_primary-dark border-b-custom_primary"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={6}
+                transition={await scrollTransition(6)}
                 viewport={{ once: false }}
               >
                 <p className="font_body_two text-custom_white-light">
@@ -140,7 +144,7 @@ export function AboutSection() {
                   </strong>
                   Santos, São Paulo
                 </p>
-              </motion.div>
+              </MotionDiv>
             </div>
           </div>
         </div>

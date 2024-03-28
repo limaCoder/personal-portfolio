@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { HeroSection } from "./sections/Hero";
 import { AboutSection } from "./sections/About";
@@ -8,13 +8,20 @@ import { ProjectsSection } from "./sections/Projects";
 import { SkillsSection } from "./sections/Skills";
 import { ContactSection } from "./sections/Contact";
 
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-
 export default function Home() {
+  // TO-DO
+  /* const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 6000);
+  }, []); */
+
   return (
-    <React.Fragment>
-      <Header />
+    <Fragment>
+      {/* // TO-DO */}
+      {/* <SplashScreen loading={loading} /> */}
       <main>
         <HeroSection />
         <AboutSection />
@@ -24,7 +31,6 @@ export default function Home() {
         <SkillsSection />
         <ContactSection />
       </main>
-      <Footer />
-    </React.Fragment>
+    </Fragment>
   );
 }

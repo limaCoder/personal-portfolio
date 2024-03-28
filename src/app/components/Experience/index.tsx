@@ -1,12 +1,10 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { IExperienceProps } from "./types";
+import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 
 export function Experience({ company }: IExperienceProps) {
   return (
-    <motion.div
+    <MotionDiv
       key={company.name}
       className="grid grid-cols-[40px,1fr] gap-4 md:gap-10"
       initial={{ opacity: 0 }}
@@ -48,6 +46,6 @@ export function Experience({ company }: IExperienceProps) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 }

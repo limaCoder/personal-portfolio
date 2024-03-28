@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
+
 import "@/app/ui/globals.css";
 import { cn } from "@/app/lib/cn";
+
 import { fontMuktaVariable, fontSairaVariable } from "../ui/fonts";
+
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "Mario Lima | Portfólio",
@@ -48,7 +53,9 @@ export default function RootLayout({
           "antialiased font-mukta"
         )}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

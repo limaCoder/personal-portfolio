@@ -47,8 +47,17 @@ const config: Config = {
         shimmer: "shimmer 2s linear infinite",
         carousel_images: "carousel_images 25s ease-in-out infinite alternate",
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        aurora: "aurora 60s linear infinite",
       },
       keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%",
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%",
+          },
+        },
         shimmer: {
           from: {
             backgroundPosition: "0 0",

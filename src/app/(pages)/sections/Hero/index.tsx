@@ -1,13 +1,17 @@
-"use client";
-
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { motion } from "framer-motion";
 
 import { WavyBackground } from "@/app/components/ui/wavy-background";
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 
-export function HeroSection() {
+import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import {
+  MotionDiv,
+  MotionHeadlineOne,
+  MotionParagraph,
+} from "@/app/lib/framer-motion/MotionComponents";
+import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
+
+export async function HeroSection() {
   return (
     <section
       id="hero"
@@ -16,46 +20,46 @@ export function HeroSection() {
       <WavyBackground>
         <div className="container h-full flex lg:flex-row justify-around items-center z-20 relative">
           <div className="max-w-[372px]">
-            <motion.p
+            <MotionParagraph
               className="font-body_one text-custom_white-dark"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={1}
+              transition={await scrollTransition(1)}
               viewport={{ once: false }}
             >
               Hi, there!
               <strong className="text-custom_white-light ml-1">
                 I’m Mario Lima
               </strong>
-            </motion.p>
-            <motion.h1
+            </MotionParagraph>
+            <MotionHeadlineOne
               className="font-headline_one text-custom_secondary-light mt-2 mb-6"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={2}
+              transition={await scrollTransition(2)}
               viewport={{ once: false }}
             >
               Front-end Developer
-            </motion.h1>
-            <motion.p
+            </MotionHeadlineOne>
+            <MotionParagraph
               className="font-body_one text-custom_white-dark"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={3}
+              transition={await scrollTransition(3)}
               viewport={{ once: false }}
             >
               My journey is crafting digital experiences that captivate and
               engage both you and your audience.
-            </motion.p>
-            <motion.div
+            </MotionParagraph>
+            <MotionDiv
               className="flex flex-row gap-7 mt-8 items-center"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={4}
+              transition={await scrollTransition(4)}
               viewport={{ once: false }}
             >
               <button className="hover:brightness-150 transition inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient_primary bg-[length:200%_100%] px-6 font-medium text-custom_white-light transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
@@ -75,14 +79,14 @@ export function HeroSection() {
                   />
                 </button>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
-          <motion.div
+          <MotionDiv
             className="relative"
             variants={scrollVariants}
             initial="hidden"
             whileInView="visible"
-            custom={5}
+            transition={await scrollTransition(5)}
             viewport={{ once: false }}
           >
             <Image
@@ -91,7 +95,7 @@ export function HeroSection() {
               width={521}
               height={677}
             />
-          </motion.div>
+          </MotionDiv>
         </div>
       </WavyBackground>
     </section>

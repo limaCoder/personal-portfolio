@@ -1,7 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
-
 import { FaDiscord } from "react-icons/fa";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
@@ -11,45 +7,51 @@ import { Spotlight } from "@/app/components/ui/Spotlight";
 import { Button } from "@/app/components/ui/button";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
+import {
+  MotionDiv,
+  MotionHeadlineThree,
+  MotionHeadlineTwo,
+} from "@/app/lib/framer-motion/MotionComponents";
 
-export function ContactSection() {
+export async function ContactSection() {
   return (
     <section
       id="contact"
       className="min-h-screen w-full relative py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02] overflow-hidden"
     >
-      <motion.div
+      <MotionDiv
         variants={scrollVariants}
         initial="hidden"
         whileInView="visible"
-        custom={1}
+        transition={await scrollTransition(1)}
         viewport={{ once: false }}
       >
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
         />
-      </motion.div>
+      </MotionDiv>
       <div className="container">
         <div className="flex flex-row justify-around">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-12">
-              <motion.h3
+              <MotionHeadlineThree
                 className="font-headline_two text-custom_white-light"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={2}
+                transition={await scrollTransition(2)}
                 viewport={{ once: false }}
               >
                 Say Hello!
-              </motion.h3>
-              <motion.div
+              </MotionHeadlineThree>
+              <MotionDiv
                 className="max-w-[384px]"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={3}
+                transition={await scrollTransition(3)}
                 viewport={{ once: false }}
               >
                 <p className="font_body-two text-custom_white-dark">
@@ -62,14 +64,14 @@ export function ContactSection() {
                   insights, and exploring potential collaborations. Don&apos;t
                   hesitate to reach out, let&apos;s start a conversation!
                 </p>
-              </motion.div>
+              </MotionDiv>
             </div>
-            <motion.div
+            <MotionDiv
               className="flex flex-col gap-8 max-w-[292px]"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={4}
+              transition={await scrollTransition(4)}
               viewport={{ once: false }}
             >
               <Button
@@ -108,19 +110,19 @@ export function ContactSection() {
                   See my Github
                 </span>
               </Button>
-            </motion.div>
+            </MotionDiv>
           </div>
           <div className="flex flex-col gap-12">
-            <motion.h2
+            <MotionHeadlineTwo
               className="font-headline_two text-custom_secondary-light"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={5}
+              transition={await scrollTransition(5)}
               viewport={{ once: false }}
             >
               Get in touch
-            </motion.h2>
+            </MotionHeadlineTwo>
             <ContactForm />
           </div>
         </div>

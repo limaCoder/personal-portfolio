@@ -12,9 +12,14 @@ import { GridBackground } from "@/app/components/ui/grid-and-dot-background";
 import { FiGlobe, FiSmartphone } from "react-icons/fi";
 import { BsCursorFill } from "react-icons/bs";
 
-import { motion } from "framer-motion";
 import Spline from "@splinetool/react-spline";
+
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransition";
+import {
+  MotionDiv,
+  MotionHeadlineTwo,
+} from "@/app/lib/framer-motion/MotionComponents";
 
 export function ServicesSection() {
   return (
@@ -23,21 +28,21 @@ export function ServicesSection() {
         <div className="container min-h-full w-full z-10">
           <div className="flex flex-row w-full h-full justify-around">
             <div className="flex flex-col h-full">
-              <motion.h2
+              <MotionHeadlineTwo
                 className="font-headline_two text-custom_secondary-light"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={1}
+                transition={scrollTransition(1)}
                 viewport={{ once: false }}
               >
                 Services
-              </motion.h2>
-              <motion.div
+              </MotionHeadlineTwo>
+              <MotionDiv
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                custom={2}
+                transition={scrollTransition(2)}
                 viewport={{ once: false }}
               >
                 <Accordion
@@ -90,14 +95,14 @@ export function ServicesSection() {
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
-              </motion.div>
+              </MotionDiv>
             </div>
-            <motion.div
+            <MotionDiv
               className="flex flex-col justify-end items-center gap-8"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              custom={3}
+              transition={scrollTransition(3)}
               viewport={{ once: false }}
             >
               <div className="max-w-[649px] min-h-[643px]">
@@ -110,7 +115,7 @@ export function ServicesSection() {
                   2-finger clicking on smartphones.
                 </p>
               </div>
-            </motion.div>
+            </MotionDiv>
           </div>
         </div>
       </GridBackground>

@@ -1,13 +1,12 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import { IProjectProps } from "./types";
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
+import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 
-export function Project({
+export async function Project({
   projectName,
   techImage,
   techImageAltText,
@@ -15,12 +14,12 @@ export function Project({
 }: IProjectProps) {
   return (
     <div className="flex flex-row justify-between items-center border-y-2 py-8 pr-8 border-y-custom_white-dark">
-      <motion.div
+      <MotionDiv
         className="flex flex-col gap-6"
         variants={scrollVariants}
         initial="hidden"
         whileInView="visible"
-        custom={3}
+        transition={await scrollTransition(3)}
         viewport={{ once: false }}
       >
         <h3 className="font-headline_two text-custom_white-light">
@@ -37,13 +36,13 @@ export function Project({
             {techName}
           </span>
         </div>
-      </motion.div>
-      <motion.div
+      </MotionDiv>
+      <MotionDiv
         className="flex flex-col"
         variants={scrollVariants}
         initial="hidden"
         whileInView="visible"
-        custom={4}
+        transition={await scrollTransition(4)}
         viewport={{ once: false }}
       >
         <a className="cursor-pointer hover:brightness-150 transition" href="#">
@@ -54,7 +53,7 @@ export function Project({
             <FiArrowUpRight size={24} className="text-custom_primary-light" />
           </div>
         </a>
-      </motion.div>
+      </MotionDiv>
     </div>
   );
 }
