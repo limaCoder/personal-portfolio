@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 
 export const MotionDiv = motion.div;
 
+export const MotionListItem = motion.li;
+
 export const MotionHeadlineOne = motion.h1;
 
 export const MotionHeadlineTwo = motion.h2;
