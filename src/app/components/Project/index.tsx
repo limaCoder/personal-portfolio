@@ -32,7 +32,7 @@ export function Project({
 
   return (
     <div
-      className="flex flex-row justify-between items-center border-y-2 py-8 pr-8 border-y-custom_white-dark"
+      className="flex flex-col lg:flex-row justify-between items-center border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark"
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -64,7 +64,7 @@ export function Project({
         </div>
       </MotionDiv>
       <MotionDiv
-        className="flex flex-col"
+        className="flex flex-col self-end lg:self-center"
         variants={scrollVariants}
         initial="hidden"
         whileInView="visible"
@@ -85,7 +85,7 @@ export function Project({
           initial={{ opacity: 0 }}
           animate={{ x: cursorPosition.x, y: cursorPosition.y, opacity: 1 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="fixed top-0 left-0 pointer-events-none w-[320px] h-[320px]"
+          className="hidden lg:fixed top-0 left-0 pointer-events-none w-[320px] h-[320px]"
           style={{ translateX: "-50%", translateY: "-50%" }}
         >
           <Image

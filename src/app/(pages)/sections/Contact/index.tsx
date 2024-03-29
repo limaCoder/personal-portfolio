@@ -33,7 +33,7 @@ export async function ContactSection() {
         />
       </MotionDiv>
       <div className="container">
-        <div className="flex flex-row justify-around">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-0 justify-around">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-12">
               <MotionHeadlineThree

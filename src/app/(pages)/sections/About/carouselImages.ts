@@ -10,7 +10,6 @@ export const carouselImages = [
   {
     id: 2,
     src: "/pages/home/about/slider-image-2.webp",
-    isPriority: true,
     alt: "Image of Mario Lima",
     width: 590,
     height: 1080,

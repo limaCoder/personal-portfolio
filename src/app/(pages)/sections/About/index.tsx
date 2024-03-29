@@ -13,8 +13,11 @@ import {
 
 export async function AboutSection() {
   return (
-    <section id="about" className="h-screen w-full relative pb-16">
-      <div className="w-full h-screen p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
+    <section
+      id="about"
+      className="min-h-screen w-full relative py-16 bg-gradient_dark -z-20"
+    >
+      <div className="w-full min-h-screen p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
         <div className="w-full h-full flex flex-row justify-start items-start animate-carousel_images">
           {carouselImages.map((carouselImage) => (
             <div
@@ -25,9 +28,9 @@ export async function AboutSection() {
                 className="border-r-2 h-auto border-r-custom_primary"
                 src={carouselImage.src}
                 alt={carouselImage.alt}
-                priority={carouselImage.isPriority}
                 width={carouselImage?.width}
                 height={carouselImage?.height}
+                loading="lazy"
               />
             </div>
           ))}
@@ -35,7 +38,7 @@ export async function AboutSection() {
       </div>
       <div className="absolute inset-0 z-10 bg-gradient_secondary opacity-90"></div>
       <div className="z-20 container flex flex-col justify-end items-center relative h-full">
-        <div className="flex flex-col justify-center gap-10">
+        <div className="flex flex-col gap-10">
           <MotionHeadlineTwo
             className="font-headline_one text-custom_white-light"
             variants={scrollVariants}
@@ -46,7 +49,7 @@ export async function AboutSection() {
           >
             About me
           </MotionHeadlineTwo>
-          <div className="flex flex-row gap-14">
+          <div className="flex flex-col lg:flex-row gap-14">
             <div className="flex flex-col max-w-[425px]">
               <MotionParagraph
                 className="mb-6 text-custom_white-dark font-body_two"

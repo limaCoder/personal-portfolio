@@ -26,10 +26,10 @@ export function ServicesSection() {
     <section id="services">
       <GridBackground>
         <div className="container min-h-full w-full z-10">
-          <div className="flex flex-row w-full h-full justify-around">
-            <div className="flex flex-col h-full">
+          <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 w-full h-full justify-around">
+            <div className="flex flex-col h-full gap-14">
               <MotionHeadlineTwo
-                className="font-headline_two text-custom_secondary-light"
+                className="font-headline_two text-custom_secondary-light hidden lg:block"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -105,12 +105,22 @@ export function ServicesSection() {
               transition={scrollTransition(3)}
               viewport={{ once: false }}
             >
-              <div className="max-w-[649px] min-h-[643px]">
+              <MotionHeadlineTwo
+                className="font-headline_two text-custom_secondary-light block lg:hidden"
+                variants={scrollVariants}
+                initial="hidden"
+                whileInView="visible"
+                transition={scrollTransition(1)}
+                viewport={{ once: false }}
+              >
+                Services
+              </MotionHeadlineTwo>
+              <div className="max-w-[649px] min-h-[32rem] lg:min-h-[643px]">
                 <Spline scene="https://prod.spline.design/3rF4AvPEaLv2Spbq/scene.splinecode" />
               </div>
-              <div className="flex flex-row justify-center items-center gap-8 -mt-36">
+              <div className="flex flex-col lg:flex-row justify-center items-center gap-8 -mt-36">
                 <BsCursorFill size={58} className="text-custom_primary-light" />
-                <p className="font-body_two text-custom_primary-light max-w-[470px]">
+                <p className="font-body_two text-custom_primary-light max-w-[470px] text-center lg:text-start">
                   Hello, to interact, just click and drag on computers; and
                   2-finger clicking on smartphones.
                 </p>

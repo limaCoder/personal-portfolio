@@ -13,12 +13,9 @@ import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransitio
 
 export async function HeroSection() {
   return (
-    <section
-      id="hero"
-      className="h-screen w-full bg-gradient_dark relative py-40"
-    >
-      <WavyBackground>
-        <div className="container h-full flex lg:flex-row justify-around items-center z-20 relative">
+    <section id="hero">
+      <WavyBackground className="container">
+        <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-around items-center gap-12 lg:gap-0 z-20 relative">
           <div className="max-w-[372px]">
             <MotionParagraph
               className="font-body_one text-custom_white-dark"
@@ -55,7 +52,7 @@ export async function HeroSection() {
               engage both you and your audience.
             </MotionParagraph>
             <MotionDiv
-              className="flex flex-row gap-7 mt-8 items-center"
+              className="flex flex-column lg:flex-row gap-7 mt-8 items-center"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
@@ -82,7 +79,7 @@ export async function HeroSection() {
             </MotionDiv>
           </div>
           <MotionDiv
-            className="relative min-w-[521px] min-h-[677]"
+            className="relative w-min-auto min-h-auto lg:min-w-[521px] lg:min-h-[677]"
             variants={scrollVariants}
             initial="hidden"
             whileInView="visible"
