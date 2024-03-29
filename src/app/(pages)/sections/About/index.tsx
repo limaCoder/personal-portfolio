@@ -17,14 +17,19 @@ export async function AboutSection() {
       <div className="w-full h-screen p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
         <div className="w-full h-full flex flex-row justify-start items-start animate-carousel_images">
           {carouselImages.map((carouselImage) => (
-            <Image
-              className="border-r-2 max-w-[590px] h-[1080px] border-r-custom_primary"
+            <div
               key={carouselImage.id}
-              src={carouselImage.src}
-              alt={carouselImage.alt}
-              width={carouselImage.width}
-              height={carouselImage.height}
-            />
+              className="relative min-w-[590px] h-[1080px]"
+            >
+              <Image
+                className="border-r-2 h-auto border-r-custom_primary"
+                src={carouselImage.src}
+                alt={carouselImage.alt}
+                priority={carouselImage.isPriority}
+                width={carouselImage?.width}
+                height={carouselImage?.height}
+              />
+            </div>
           ))}
         </div>
       </div>

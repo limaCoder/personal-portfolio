@@ -45,6 +45,8 @@ export async function ProjectsSection() {
               <Project
                 key={project.id}
                 projectName={project.projectName}
+                projectImage={project.projectImage}
+                projectImageAltText={project.projectImageAltText}
                 techImage={project.techImage}
                 techImageAltText={project.techImageAltText}
                 techName={project.techName}

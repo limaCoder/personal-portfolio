@@ -20,6 +20,7 @@ export function Experience({ company }: IExperienceProps) {
             alt={`logo ${company.name}`}
             width={74}
             height={74}
+            loading="lazy"
           />
         </div>
 

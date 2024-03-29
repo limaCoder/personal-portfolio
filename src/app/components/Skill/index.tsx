@@ -25,6 +25,7 @@ export function Skill({
               <Image
                 className="p-[2px] max-h-[32px]"
                 src={image}
+                loading="lazy"
                 alt={alternativeText}
                 width={32}
                 height={32}

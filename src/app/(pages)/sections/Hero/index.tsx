@@ -82,7 +82,7 @@ export async function HeroSection() {
             </MotionDiv>
           </div>
           <MotionDiv
-            className="relative"
+            className="relative min-w-[521px] min-h-[677]"
             variants={scrollVariants}
             initial="hidden"
             whileInView="visible"
@@ -90,10 +90,11 @@ export async function HeroSection() {
             viewport={{ once: false }}
           >
             <Image
-              src="/pages/home/hero/avatar-image.png"
+              src="/pages/home/hero/avatar-image.webp"
+              priority
               alt="Representation of Mario Lima in avatar"
-              width={521}
-              height={677}
+              width={506}
+              height={678}
             />
           </MotionDiv>
         </div>
