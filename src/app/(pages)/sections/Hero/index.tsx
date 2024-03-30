@@ -59,22 +59,32 @@ export async function HeroSection() {
               transition={await scrollTransition(4)}
               viewport={{ once: false }}
             >
-              <button className="hover:brightness-150 transition inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient_primary bg-[length:200%_100%] px-6 font-medium text-custom_white-light transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+              <a
+                role="button"
+                className="hover:brightness-150 inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient_primary bg-[length:200%_100%] px-6 font-medium text-custom_white-light transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+                href="#contact"
+              >
                 Contact me
-              </button>
+              </a>
               <div className="flex flex-row gap-4">
-                <button>
+                <a
+                  aria-label="Link of Mario Github's profile"
+                  href="https://github.com/limaCoder"
+                >
                   <FaGithub
                     size={24}
                     className="text-custom_secondary-dark hover:brightness-150 transition"
                   />
-                </button>
-                <button>
+                </a>
+                <a
+                  aria-label="Link of Mario Linkedin's profile"
+                  href="https://www.linkedin.com/in/marioaulima/"
+                >
                   <FaLinkedin
                     size={24}
                     className="text-custom_secondary-dark hover:brightness-150 transition"
                   />
-                </button>
+                </a>
               </div>
             </MotionDiv>
           </div>

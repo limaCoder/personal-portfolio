@@ -1,24 +1,44 @@
-import React, { Fragment } from "react";
+import React, { Fragment, Suspense } from "react";
+import dynamic from "next/dynamic";
 
 import { HeroSection } from "./sections/Hero";
-import { AboutSection } from "./sections/About";
-import { ServicesSection } from "./sections/Services";
-import { ExperiencesSection } from "./sections/Experiences";
-import { ProjectsSection } from "./sections/Projects";
-import { SkillsSection } from "./sections/Skills";
-import { ContactSection } from "./sections/Contact";
+
+const AboutSection = dynamic(() =>
+  import("./sections/About").then((mod) => mod.AboutSection)
+);
+
+const ServicesSection = React.lazy(() =>
+  import("./sections/Services").then((mod) => ({
+    default: mod.ServicesSection,
+  }))
+);
+
+const ExperiencesSection = dynamic(() =>
+  import("./sections/Experiences").then((mod) => mod.ExperiencesSection)
+);
+const ProjectsSection = dynamic(() =>
+  import("./sections/Projects").then((mod) => mod.ProjectsSection)
+);
+const SkillsSection = dynamic(() =>
+  import("./sections/Skills").then((mod) => mod.SkillsSection)
+);
+const ContactSection = dynamic(() =>
+  import("./sections/Contact").then((mod) => mod.ContactSection)
+);
 
 export default function Home() {
   return (
     <Fragment>
       <main>
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ExperiencesSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ContactSection />
+        <Suspense>
+          <AboutSection />
+          <ServicesSection />
+          <ExperiencesSection />
+          <ProjectsSection />
+          <SkillsSection />
+          <ContactSection />
+        </Suspense>
       </main>
     </Fragment>
   );

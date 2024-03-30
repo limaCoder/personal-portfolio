@@ -30,9 +30,9 @@ export function Experience({ company }: IExperienceProps) {
       <div>
         <div className="flex flex-col gap-2 text-sm sm:text-base">
           <a href={company.companyURL} rel="noreferrer">
-            <h4 className="font-headline_four text-custom_white-dark">
+            <h3 className="font-headline_four text-custom_white-dark">
               @ {company.name}
-            </h4>
+            </h3>
           </a>
           <h4 className="font-headline_four text-custom_white-light">
             {company.role}

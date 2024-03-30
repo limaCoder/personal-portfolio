@@ -38,7 +38,7 @@ export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
         className="flex flex-col justify-center items-center gap-12"
         defaultOpen={skillType === "Front-end" ? true : false}
       >
-        <CollapsibleTrigger className="flex flex-row gap-3 hover:brightness-150 active:backdrop-brightness-200 transition active:scale-95">
+        <CollapsibleTrigger className="flex flex-row items-center gap-3 hover:brightness-150 active:backdrop-brightness-200 transition active:scale-95">
           <h3 className="font-headline_three text-custom_white-light">
             {skillType}
           </h3>

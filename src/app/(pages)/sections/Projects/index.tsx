@@ -17,7 +17,7 @@ export async function ProjectsSection() {
       className="min-h-screen w-full relative py-20 bg-gradient_dark"
     >
       <div className="container relative h-full w-full z-20">
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-12 lg:gap-20">
           <div className="flex flex-col gap-8">
             <MotionHeadlineTwo
               className="font-headline_one text-custom_secondary-light"

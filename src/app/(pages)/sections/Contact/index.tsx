@@ -78,15 +78,21 @@ export async function ContactSection() {
                 className="rounded-[27px] border-custom_secondary hover:brightness-[0.8] transition"
                 variant="outline"
               >
-                <FiLinkedin
-                  size={24}
-                  className="text-custom_secondary-dark mr-4"
-                />
-                <span className="font-headline_five text-custom_white">
-                  Chat with me in Linkedin
-                </span>
+                <a
+                  className="flex flex-row"
+                  href="https://www.linkedin.com/in/marioaulima/"
+                >
+                  <FiLinkedin
+                    size={24}
+                    className="text-custom_secondary-dark mr-4"
+                  />
+                  <span className="font-headline_five text-custom_white">
+                    Chat with me in Linkedin
+                  </span>
+                </a>
               </Button>
-              <Button
+              {/* TO-DO - Discord bot */}
+              {/* <Button
                 className="rounded-[27px] border-custom_secondary hover:brightness-[0.8] transition"
                 variant="outline"
               >
@@ -97,18 +103,23 @@ export async function ContactSection() {
                 <span className="font-headline_five text-custom_white">
                   Chat with me in Discord
                 </span>
-              </Button>
+              </Button> */}
               <Button
                 className="rounded-[27px] border-custom_secondary hover:brightness-[0.8] transition"
                 variant="outline"
               >
-                <FiGithub
-                  size={24}
-                  className="text-custom_secondary-dark mr-4"
-                />
-                <span className="font-headline_five text-custom_white">
-                  See my Github
-                </span>
+                <a
+                  className="flex flex-row"
+                  href="https://github.com/limaCoder"
+                >
+                  <FiGithub
+                    size={24}
+                    className="text-custom_secondary-dark mr-4"
+                  />
+                  <span className="font-headline_five text-custom_white">
+                    See my Github
+                  </span>
+                </a>
               </Button>
             </MotionDiv>
           </div>

@@ -106,20 +106,20 @@ export async function AboutSection() {
               >
                 <div className="flex flex-row gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
-                  <p className="font-body_two text-custom_white-light max-w-[312px]">
+                  <p className="font-body_two text-custom_white-light max-w-[220px] lg:max-w-[312px]">
                     Freelancer, Developer and UI/UX Design enthusiast.
                   </p>
                 </div>
                 <div className="flex flex-row gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
-                  <p className="font-body_two text-custom_white-light max-w-[312px]">
+                  <p className="font-body_two text-custom_white-light max-w-[220px] lg:max-w-[312px]">
                     Experienced in major companies like Azul, Hapvida, and
                     Mutant.
                   </p>
                 </div>
                 <div className="flex flex-row gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
-                  <p className="font-body_two text-custom_white-light max-w-[312px]">
+                  <p className="font-body_two text-custom_white-light max-w-[220px] lg:max-w-[312px]">
                     Lifelong learner, constantly pushing the boundaries of
                     technology
                   </p>

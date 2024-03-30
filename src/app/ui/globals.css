@@ -73,6 +73,7 @@
 
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
   }
 
   body {
@@ -88,6 +89,10 @@
     font-weight: 400;
     font-size: 72px;
     line-height: 110%;
+
+    @media screen and (max-width: 375px) {
+      font-size: 3.4rem;
+    }
   }
 
   .font-headline_two {
@@ -95,6 +100,10 @@
     font-weight: 400;
     font-size: 48px;
     line-height: 110%;
+
+    @media screen and (max-width: 375px) {
+      font-size: 2.6rem;
+    }
   }
 
   .font-headline_three {
@@ -102,6 +111,10 @@
     font-weight: 300;
     font-size: 36px;
     line-height: 120%;
+
+    @media screen and (max-width: 375px) {
+      font-size: 1.7rem;
+    }
   }
 
   .font-headline_four {
@@ -116,6 +129,10 @@
     font-weight: 300;
     font-size: 18px;
     line-height: 140%;
+
+    @media screen and (max-width: 375px) {
+      font-size: 1rem;
+    }
   }
 
   .font-body_one {
