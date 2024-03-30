@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
@@ -11,32 +8,12 @@ import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransitio
 
 export function Project({
   projectName,
-  projectImage,
-  projectImageAltText,
   techImage,
   techImageAltText,
   techName,
 }: IProjectProps) {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [isHovering, setIsHovering] = useState(false);
-
-  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
-    setCursorPosition({
-      x: event.clientX,
-      y: event.clientY,
-    });
-  };
-
-  const handleMouseEnter = () => setIsHovering(true);
-  const handleMouseLeave = () => setIsHovering(false);
-
   return (
-    <div
-      className="flex flex-col lg:flex-row justify-between items-center border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="flex flex-col lg:flex-row justify-between items-center border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark">
       <MotionDiv
         className="flex flex-col gap-6"
         variants={scrollVariants}
@@ -80,23 +57,6 @@ export function Project({
           </div>
         </a>
       </MotionDiv>
-      {isHovering && (
-        <MotionDiv
-          initial={{ opacity: 0 }}
-          animate={{ x: cursorPosition.x, y: cursorPosition.y, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="hidden lg:fixed top-0 left-0 pointer-events-none w-[320px] h-[320px]"
-          style={{ translateX: "-50%", translateY: "-50%" }}
-        >
-          <Image
-            className="rounded-sm"
-            src={projectImage}
-            alt={projectImageAltText}
-            width={320}
-            height={320}
-          />
-        </MotionDiv>
-      )}
     </div>
   );
 }

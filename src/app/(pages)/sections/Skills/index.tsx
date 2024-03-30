@@ -1,7 +1,5 @@
 import { SkillCollapsible } from "@/app/components/SkillCollapsible";
 
-import { skillsSections } from "./skills";
-
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 import {
@@ -9,7 +7,24 @@ import {
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
+import { getSkills } from "@/app/services/notion/skills";
+import { skillsOrder } from "@/app/constants/skillsOrder";
+
 export async function SkillsSection() {
+  const skills = await getSkills();
+
+  const skillsTypes = skills.map((skill) =>
+    skill.skillType.map((type) => type)
+  );
+
+  const flatSkillsTypes = skillsTypes.flat();
+
+  const uniqueSkillsTypes = Array.from(new Set(flatSkillsTypes));
+
+  const orderedSkills = uniqueSkillsTypes.sort((a, b) => {
+    return skillsOrder.indexOf(a) - skillsOrder.indexOf(b);
+  });
+
   return (
     <section
       id="skills"
@@ -19,7 +34,7 @@ export async function SkillsSection() {
         <div className="flex flex-col gap-14">
           <div className="flex flex-col justify-center items-center gap-8">
             <MotionHeadlineTwo
-              className="font-headline_two text-custom_secondary-light"
+              className="text-center font-headline_two text-custom_secondary-light"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
@@ -43,12 +58,8 @@ export async function SkillsSection() {
             </MotionParagraph>
           </div>
           <div className="flex flex-col gap-16 justify-center items-center">
-            {skillsSections.map((skillSection) => (
-              <SkillCollapsible
-                key={skillSection.skillType}
-                skillType={skillSection.skillType}
-                skills={skillSection.skills}
-              />
+            {orderedSkills.map((skillType) => (
+              <SkillCollapsible key={skillType} skillType={skillType} />
             ))}
           </div>
         </div>

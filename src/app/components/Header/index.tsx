@@ -13,7 +13,6 @@ export function Header() {
             href="#hero"
           >
             <Image
-              className="h-auto w-auto"
               priority
               src="/logo/logo.svg"
               alt="Logo of Mario Lima's Brand"

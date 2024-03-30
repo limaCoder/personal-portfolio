@@ -8,7 +8,6 @@ export function Footer() {
       <div className="container h-full">
         <div className="w-full h-full flex flex-row justify-center items-center gap-8">
           <Image
-            className="h-auto w-auto"
             priority
             src="/logo/logo.svg"
             alt="Logo of Mario Lima's Brand"

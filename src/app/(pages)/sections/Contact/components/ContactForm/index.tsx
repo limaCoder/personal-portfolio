@@ -75,7 +75,7 @@ export function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  className="border-0 w-[384px]"
+                  className="border-0 lg:w-[384px]"
                   placeholder="Enter your full name"
                   {...field}
                 />
@@ -94,7 +94,7 @@ export function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  className="border-0 w-[384px]"
+                  className="border-0 lg:w-[384px]"
                   placeholder="Enter your best email"
                   {...field}
                 />
@@ -113,7 +113,7 @@ export function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Input
-                  className="border-0 w-[384px]"
+                  className="border-0 lg:w-[384px]"
                   placeholder="Enter a subject"
                   {...field}
                 />
@@ -132,7 +132,7 @@ export function ContactForm() {
               </FormLabel>
               <FormControl>
                 <Textarea
-                  className="resize-none border-0 w-[384px]"
+                  className="resize-none border-0 lg:w-[384px]"
                   {...field}
                 />
               </FormControl>

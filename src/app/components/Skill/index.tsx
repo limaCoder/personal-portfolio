@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 
 import { BackgroundGradient } from "../ui/background-gradient";
@@ -23,9 +25,8 @@ export function Skill({
           <BackgroundGradient className="flex flex-row pl-2 gap-4 items-center w-[202px] min-h-16 bg-custom_black-light shadow-[0_15px_20px_4px_rgba(0,0,0,0.25)]">
             <div className="flex justify-center items-center bg-gradient_dark_vertical w-10 h-10 rounded-sm">
               <Image
-                className="p-[2px] max-h-[32px]"
+                className="p-[2px]"
                 src={image}
-                loading="lazy"
                 alt={alternativeText}
                 width={32}
                 height={32}

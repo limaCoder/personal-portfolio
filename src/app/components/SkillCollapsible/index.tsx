@@ -1,7 +1,3 @@
-"use client";
-
-import { AnimatePresence } from "framer-motion";
-
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { Skill } from "../Skill";
 
@@ -16,23 +12,26 @@ import { ISkillCollapsibleProps } from "./types";
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransition";
 import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
+import { childVariants } from "@/app/lib/framer-motion/childVariants";
+import { getSkills } from "@/app/services/notion/skills";
 
-export function SkillCollapsible({
-  skillType,
-  skills,
-}: ISkillCollapsibleProps) {
-  const childVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
-    exit: { y: -20, opacity: 0, transition: { duration: 2 } },
-  };
+export const revalidate = 1000 * 60 * 60;
+
+export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
+  const skills = await getSkills();
+
+  const filteredSkills = skills.filter((skill) =>
+    skill.skillType.includes(skillType)
+  );
+
+  const orderedSkills = filteredSkills.sort((a, b) => a.id - b.id);
 
   return (
     <MotionDiv
       variants={scrollVariants}
       initial="hidden"
       whileInView="visible"
-      transition={scrollTransition(3)}
+      transition={await scrollTransition(3)}
       viewport={{ once: false }}
     >
       <Collapsible
@@ -49,25 +48,22 @@ export function SkillCollapsible({
           </div>
         </CollapsibleTrigger>
         <CollapsibleContent className="flex flex-row justify-center items-center flex-wrap gap-6 max-w-[920px] gap-y-10">
-          <AnimatePresence mode="popLayout">
-            {skills.map((skill) => (
-              <MotionDiv
+          {orderedSkills.map((skill) => (
+            <MotionDiv
+              key={skill.id}
+              variants={childVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <Skill
                 key={skill.id}
-                variants={childVariants}
-                initial="hidden"
-                animate="visible"
-                exit="exit"
-              >
-                <Skill
-                  key={skill.id}
-                  name={skill.name}
-                  image={skill.image}
-                  alternativeText={skill.alternativeText}
-                  description={skill.description}
-                />
-              </MotionDiv>
-            ))}
-          </AnimatePresence>
+                name={skill.name}
+                image={skill?.image}
+                alternativeText={skill.alternativeText}
+                description={skill.description}
+              />
+            </MotionDiv>
+          ))}
         </CollapsibleContent>
       </Collapsible>
     </MotionDiv>
