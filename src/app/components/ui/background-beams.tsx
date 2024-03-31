@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/app/lib/cn";
+import { cn } from "@/app/lib/tailwind/cn";
 
 export const BackgroundBeams = React.memo(
   ({ className }: { className?: string }) => {

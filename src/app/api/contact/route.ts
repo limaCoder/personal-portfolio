@@ -1,4 +1,4 @@
-import { envServerSchema } from "@/app/serverEnvSchema";
+import { envServerSchema } from "@/app/lib/env/serverEnvSchema";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 

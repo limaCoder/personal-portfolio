@@ -1,4 +1,4 @@
-import { envClientSchema } from "@/app/clientEnvSchema";
+import { envClientSchema } from "@/app/lib/env/clientEnvSchema";
 
 export function api(path: string, init?: RequestInit) {
   const baseUrl = envClientSchema.NEXT_PUBLIC_API_BASE_URL;

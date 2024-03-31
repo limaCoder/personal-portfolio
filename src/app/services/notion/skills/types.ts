@@ -8,7 +8,7 @@ import {
   TagsProperty,
   TextProperty,
   TitleProperty,
-} from "@/app/_types/notion";
+} from "@/_types/notion";
 
 export interface NotionSkillsDatabaseResponse {
   object: string;

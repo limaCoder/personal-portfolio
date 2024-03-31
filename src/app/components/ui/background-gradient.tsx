@@ -1,6 +1,6 @@
 import React from "react";
 
-import { cn } from "@/app/lib/cn";
+import { cn } from "@/app/lib/tailwind/cn";
 import { motion } from "framer-motion";
 
 export const BackgroundGradient = ({

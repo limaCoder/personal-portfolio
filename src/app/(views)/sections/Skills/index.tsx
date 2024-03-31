@@ -8,7 +8,7 @@ import {
 } from "@/app/lib/framer-motion/MotionComponents";
 
 import { getSkills } from "@/app/services/notion/skills";
-import { skillsOrder } from "@/app/constants/skillsOrder";
+import { skillsOrder } from "@/constants/skillsOrder";
 
 export async function SkillsSection() {
   const skills = await getSkills();

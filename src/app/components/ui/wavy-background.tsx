@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import { cn } from "@/app/lib/cn";
+import { cn } from "@/app/lib/tailwind/cn";
 import { createNoise3D } from "simplex-noise";
 
 export const WavyBackground = ({
