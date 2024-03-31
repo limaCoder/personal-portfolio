@@ -1,7 +1,9 @@
-import { companies } from "./companies";
 import { Experience } from "@/app/components/Experience";
+import { getExperiences } from "@/app/services/notion/experiences";
 
-export function ExperiencesSection() {
+export async function ExperiencesSection() {
+  const companies = await getExperiences();
+
   return (
     <section
       id="experiences"
