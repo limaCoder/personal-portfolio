@@ -1,13 +1,15 @@
 "use server";
 
 import { Client } from "@notionhq/client";
-import { NotionExperiencesDatabaseResponse } from "./types";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+import { NotionExperiencesDatabaseResponse } from "./types";
+import { envServerSchema } from "@/app/lib/env/serverEnvSchema";
+
+const notion = new Client({ auth: envServerSchema.NOTION_API_KEY });
 
 export async function getExperiences() {
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_EXPERIENCES_DATABASE_ID!,
+    database_id: envServerSchema.NOTION_EXPERIENCES_DATABASE_ID,
   });
 
   const typedResponse =

@@ -2,12 +2,13 @@
 
 import { Client } from "@notionhq/client";
 import { NotionSkillsDatabaseResponse } from "./types";
+import { envServerSchema } from "@/app/lib/env/serverEnvSchema";
 
-const notion = new Client({ auth: process.env.NOTION_API_KEY });
+const notion = new Client({ auth: envServerSchema.NOTION_API_KEY });
 
 export async function getSkills() {
   const response = await notion.databases.query({
-    database_id: process.env.NOTION_SKILLS_DATABASE_ID!,
+    database_id: envServerSchema.NOTION_SKILLS_DATABASE_ID,
   });
 
   const typedResponse = response as unknown as NotionSkillsDatabaseResponse;

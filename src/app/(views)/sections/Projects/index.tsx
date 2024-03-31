@@ -10,6 +10,8 @@ import {
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
+export const revalidate = 1000 * 60 * 60;
+
 export async function ProjectsSection() {
   return (
     <section
