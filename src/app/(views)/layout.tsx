@@ -7,6 +7,7 @@ import { fontMuktaVariable, fontSairaVariable } from "../ui/fonts";
 
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
+import { Toaster } from "../components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Mario Lima | Portfólio",
@@ -56,6 +57,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

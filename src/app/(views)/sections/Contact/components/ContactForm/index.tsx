@@ -22,6 +22,9 @@ import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransitio
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { MotionForm } from "@/app/lib/framer-motion/MotionComponents";
 
+import { api } from "@/app/services/http/api";
+import { useToast } from "@/app/components/ui/use-toast";
+
 const formSchema = z.object({
   name: z.string().min(2, {
     message: "name must be at least 2 characters.",
@@ -42,16 +45,44 @@ const formSchema = z.object({
     }),
 });
 
+type ContactFormData = z.infer<typeof formSchema>;
+
 export function ContactForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<ContactFormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      email: "",
+      subject: "I look for a developer to bring my idea to reality",
+      message: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+  const { toast } = useToast();
+
+  async function onSubmit(data: ContactFormData) {
+    try {
+      await api("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      toast({
+        variant: "success",
+        description: "Your message has been sent with success 🤩.",
+      });
+
+      form.reset();
+    } catch {
+      toast({
+        variant: "destructive",
+        title: "Something went wrong.",
+        description: "There was a problem with the request 😰.",
+      });
+    }
   }
 
   return (
@@ -140,7 +171,11 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button className="bg-custom_primary-dark max-w-[135px]" type="submit">
+        <Button
+          className="bg-custom_primary-dark max-w-[135px]"
+          type="submit"
+          disabled={form.formState.isSubmitting}
+        >
           <FiArrowUpCircle size={20} className="text-custom_white-light mr-4" />
           <span className="font-headline_five text-custom_white-light">
             Submit
