@@ -33,11 +33,11 @@ export async function ContactSection() {
         />
       </MotionDiv>
       <div className="container">
-        <div className="flex flex-col lg:flex-row gap-12 lg:gap-0 justify-around">
-          <div className="flex flex-col gap-8">
+        <div className="flex flex-col-reverse lg:flex-row gap-12 lg:gap-0 justify-around">
+          <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-8">
             <div className="flex flex-col gap-12">
               <MotionHeadlineThree
-                className="font-headline_two text-custom_white-light"
+                className="font-headline_two text-custom_white-light text-center lg:text-start"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -91,19 +91,6 @@ export async function ContactSection() {
                   </span>
                 </a>
               </Button>
-              {/* TO-DO - Discord bot */}
-              {/* <Button
-                className="rounded-[27px] border-custom_secondary hover:brightness-[0.8] transition"
-                variant="outline"
-              >
-                <FaDiscord
-                  size={24}
-                  className="text-custom_secondary-dark mr-4"
-                />
-                <span className="font-headline_five text-custom_white">
-                  Chat with me in Discord
-                </span>
-              </Button> */}
               <Button
                 className="rounded-[27px] border-custom_secondary hover:brightness-[0.8] transition"
                 variant="outline"
@@ -125,7 +112,7 @@ export async function ContactSection() {
           </div>
           <div className="flex flex-col gap-12">
             <MotionHeadlineTwo
-              className="font-headline_two text-custom_secondary-light"
+              className="font-headline_two text-custom_secondary-light text-center lg:text-start"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"

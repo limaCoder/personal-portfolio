@@ -27,9 +27,9 @@ export function ServicesSection() {
       <GridBackground>
         <div className="container min-h-full w-full z-10">
           <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 w-full h-full justify-around">
-            <div className="flex flex-col h-full gap-14">
+            <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start h-full gap-14">
               <MotionHeadlineTwo
-                className="font-headline_two text-custom_secondary-light hidden lg:block"
+                className="font-headline_two text-custom_secondary-light"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
@@ -98,23 +98,13 @@ export function ServicesSection() {
               </MotionDiv>
             </div>
             <MotionDiv
-              className="flex flex-col justify-end items-center gap-8"
+              className="hidden lg:flex flex-col justify-end items-center gap-8"
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
               transition={scrollTransition(3)}
               viewport={{ once: false }}
             >
-              <MotionHeadlineTwo
-                className="font-headline_two text-custom_secondary-light block lg:hidden"
-                variants={scrollVariants}
-                initial="hidden"
-                whileInView="visible"
-                transition={scrollTransition(1)}
-                viewport={{ once: false }}
-              >
-                Services
-              </MotionHeadlineTwo>
               <div className="max-w-[649px] min-h-[32rem] lg:min-h-[643px]">
                 <Spline scene="https://prod.spline.design/3rF4AvPEaLv2Spbq/scene.splinecode" />
               </div>

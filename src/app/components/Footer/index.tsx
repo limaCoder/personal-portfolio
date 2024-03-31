@@ -14,7 +14,7 @@ export function Footer() {
             height={71}
             width={71}
           />
-          <p className="font-body_two text-custom_white-dark">
+          <p className="font-body_two text-custom_white-dark text-center">
             © {currentYear} | Portfolio website designed and developed by Mario
             Augusto de Lima
           </p>

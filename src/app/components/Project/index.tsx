@@ -13,7 +13,7 @@ export function Project({
   techName,
 }: IProjectProps) {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark">
+    <div className="flex flex-col lg:flex-row justify-between border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark">
       <MotionDiv
         className="flex flex-col gap-6"
         variants={scrollVariants}

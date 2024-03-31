@@ -104,29 +104,29 @@ export async function AboutSection() {
                 transition={await scrollTransition(5)}
                 viewport={{ once: false }}
               >
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row items-center gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
-                  <p className="font-body_two text-custom_white-light max-w-[220px] lg:max-w-[312px]">
+                  <p className="font-body_two text-custom_white-light max-w-[220px] sm:max-w-[100%] lg:max-w-[312px]">
                     Freelancer, Developer and UI/UX Design enthusiast.
                   </p>
                 </div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row items-center gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
-                  <p className="font-body_two text-custom_white-light max-w-[220px] lg:max-w-[312px]">
+                  <p className="font-body_two text-custom_white-light max-w-[220px] sm:max-w-[100%] lg:max-w-[312px]">
                     Experienced in major companies like Azul, Hapvida, and
                     Mutant.
                   </p>
                 </div>
-                <div className="flex flex-row gap-4">
+                <div className="flex flex-row items-center gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
-                  <p className="font-body_two text-custom_white-light max-w-[220px] lg:max-w-[312px]">
+                  <p className="font-body_two text-custom_white-light max-w-[220px] sm:max-w-[100%] lg:max-w-[312px]">
                     Lifelong learner, constantly pushing the boundaries of
                     technology
                   </p>
                 </div>
               </MotionDiv>
               <MotionDiv
-                className="flex flex-col max-w-[352px] h-[208px] px-4 py-6 gap-5 bg-gradient_dark border-r-2 border-b-2 border-r-custom_primary-dark border-b-custom_primary"
+                className="flex flex-col md:self-center lg:self-start w-full lg:max-w-[352px] h-[208px] px-4 py-6 gap-5 bg-gradient_dark border-r-2 border-b-2 border-r-custom_primary-dark border-b-custom_primary"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
