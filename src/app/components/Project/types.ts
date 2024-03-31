@@ -5,4 +5,5 @@ export interface IProjectProps {
   techImage: string;
   techImageAltText: string;
   techName: string;
+  projectLink: string;
 }

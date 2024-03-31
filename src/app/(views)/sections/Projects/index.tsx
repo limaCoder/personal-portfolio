@@ -1,8 +1,6 @@
 import { BackgroundBeams } from "@/app/components/ui/background-beams";
 import { Project } from "@/app/components/Project";
 
-import { projects } from "./projects";
-
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 import {
@@ -10,9 +8,13 @@ import {
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
+import { getProjects } from "@/app/services/notion/projects";
+
 export const revalidate = 1000 * 60 * 60;
 
 export async function ProjectsSection() {
+  const projects = await getProjects();
+
   return (
     <section
       id="projects"
@@ -52,6 +54,7 @@ export async function ProjectsSection() {
                 techImage={project.techImage}
                 techImageAltText={project.techImageAltText}
                 techName={project.techName}
+                projectLink={project.projectLink}
               />
             ))}
           </div>

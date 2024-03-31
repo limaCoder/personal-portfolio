@@ -2,22 +2,23 @@ import {
   CreatedBy,
   IncrementIdProperty,
   LastEditedBy,
+  MediaProperty,
   PageOrDatabase,
   Parent,
   TextProperty,
   TitleProperty,
 } from "@/_types/notion";
 
-export interface NotionExperiencesDatabaseResponse {
+export interface NotionProjectsDatabaseResponse {
   object: string;
-  results: ExperiencesResult[];
+  results: ProjectsResult[];
   next_cursor: any;
   has_more: boolean;
   type: string;
   page_or_database: PageOrDatabase;
 }
 
-export interface ExperiencesResult {
+export interface ProjectsResult {
   object: string;
   id: string;
   created_time: string;
@@ -28,17 +29,18 @@ export interface ExperiencesResult {
   icon: any;
   parent: Parent;
   archived: boolean;
-  properties: ExperiencesProperties;
+  properties: ProjectsProperties;
   url: string;
   public_url: any;
 }
 
-export interface ExperiencesProperties {
+export interface ProjectsProperties {
   id: IncrementIdProperty;
-  name: TitleProperty;
-  imageUrl: TextProperty;
-  companyURL: TextProperty;
-  role: TextProperty;
-  periodInCompany: TextProperty;
-  description: TextProperty;
+  projectName: TitleProperty;
+  projectImage: MediaProperty;
+  projectImageAltText: TextProperty;
+  techImage: MediaProperty;
+  techImageAltText: TextProperty;
+  techName: TextProperty;
+  projectLink: TextProperty;
 }
