@@ -61,28 +61,7 @@ export function ContactForm() {
   const { toast } = useToast();
 
   async function onSubmit(data: ContactFormData) {
-    try {
-      await api("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      toast({
-        variant: "success",
-        description: "Your message has been sent with success 🤩.",
-      });
-
-      form.reset();
-    } catch {
-      toast({
-        variant: "destructive",
-        title: "Something went wrong.",
-        description: "There was a problem with the request 😰.",
-      });
-    }
+    console.log(data);
   }
 
   return (
