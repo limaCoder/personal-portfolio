@@ -1,4 +1,5 @@
-import { envServerSchema } from "@/app/lib/env/serverEnvSchema";
+import { env } from "@/app/lib/env/env";
+
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -9,7 +10,7 @@ const bodySchema = z.object({
   message: z.string(),
 });
 
-const WEBHOOK_URL = envServerSchema.DISCORD_WEBHOOK_CONTACT_FORM;
+const WEBHOOK_URL = env.DISCORD_WEBHOOK_CONTACT_FORM;
 
 export async function POST(request: Request) {
   try {

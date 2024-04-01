@@ -1,14 +1,15 @@
 "use server";
 
 import { Client } from "@notionhq/client";
-import { NotionSkillsDatabaseResponse } from "./types";
-import { envServerSchema } from "@/app/lib/env/serverEnvSchema";
 
-const notion = new Client({ auth: envServerSchema.NOTION_API_KEY });
+import { NotionSkillsDatabaseResponse } from "./types";
+import { env } from "@/app/lib/env/env";
+
+const notion = new Client({ auth: env.NOTION_API_KEY });
 
 export async function getSkills() {
   const response = await notion.databases.query({
-    database_id: envServerSchema.NOTION_SKILLS_DATABASE_ID,
+    database_id: env.NOTION_SKILLS_DATABASE_ID,
   });
 
   const typedResponse = response as unknown as NotionSkillsDatabaseResponse;
