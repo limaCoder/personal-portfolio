@@ -22,7 +22,6 @@ import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransitio
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { MotionForm } from "@/app/lib/framer-motion/MotionComponents";
 
-import { api } from "@/app/services/http/api";
 import { useToast } from "@/app/components/ui/use-toast";
 
 const formSchema = z.object({
