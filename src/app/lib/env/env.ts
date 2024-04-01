@@ -15,10 +15,7 @@ export const env = createEnv({
   },
 
   runtimeEnv: {
-    // local
-    // NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
-    // production
-    NEXT_PUBLIC_API_BASE_URL: `https://${process.env.VERCEL_URL}`,
+    NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
     DISCORD_WEBHOOK_CONTACT_FORM: process.env.DISCORD_WEBHOOK_CONTACT_FORM,
     NOTION_API_KEY: process.env.NOTION_API_KEY,
     NOTION_EXPERIENCES_DATABASE_ID: process.env.NOTION_EXPERIENCES_DATABASE_ID,
