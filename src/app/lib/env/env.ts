@@ -10,12 +10,12 @@ export const env = createEnv({
     NOTION_SKILLS_DATABASE_ID: z.string(),
   },
 
-  client: {
+  /* client: {
     NEXT_PUBLIC_API_BASE_URL: z.string().url(),
-  },
+  }, */
 
   runtimeEnv: {
-    NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
+    /* NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL, */
     DISCORD_WEBHOOK_CONTACT_FORM: process.env.DISCORD_WEBHOOK_CONTACT_FORM,
     NOTION_API_KEY: process.env.NOTION_API_KEY,
     NOTION_EXPERIENCES_DATABASE_ID: process.env.NOTION_EXPERIENCES_DATABASE_ID,
