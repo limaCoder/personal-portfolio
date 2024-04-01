@@ -22,6 +22,7 @@ import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransitio
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { MotionForm } from "@/app/lib/framer-motion/MotionComponents";
 
+import { api } from "@/app/services/http/api";
 import { useToast } from "@/app/components/ui/use-toast";
 
 const formSchema = z.object({
@@ -60,7 +61,28 @@ export function ContactForm() {
   const { toast } = useToast();
 
   async function onSubmit(data: ContactFormData) {
-    console.log(data);
+    try {
+      await api("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      toast({
+        variant: "success",
+        description: "Your message has been sent with success 🤩.",
+      });
+
+      form.reset();
+    } catch {
+      toast({
+        variant: "destructive",
+        title: "Something went wrong.",
+        description: "There was a problem with the request 😰.",
+      });
+    }
   }
 
   return (
@@ -150,7 +172,7 @@ export function ContactForm() {
           )}
         />
         <Button
-          className="bg-custom_primary-dark w-full lg:max-w-[135px]"
+          className="bg-custom_primary-dark max-w-[135px]"
           type="submit"
           disabled={form.formState.isSubmitting}
         >
