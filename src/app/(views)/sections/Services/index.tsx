@@ -43,7 +43,6 @@ export function ServicesSection() {
                 initial="hidden"
                 whileInView="visible"
                 transition={scrollTransition(2)}
-                viewport={{ once: false }}
               >
                 <Accordion
                   className="flex flex-col h-full justify-center gap-16 max-w-[379px]"

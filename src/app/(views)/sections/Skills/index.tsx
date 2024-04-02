@@ -38,7 +38,7 @@ export async function SkillsSection() {
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              transition={await scrollTransition(1)}
+              transition={{ duration: 0.5 }}
               viewport={{ once: false }}
             >
               Techs and uses
@@ -48,7 +48,7 @@ export async function SkillsSection() {
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              transition={await scrollTransition(2)}
+              transition={{ duration: 0.7 }}
               viewport={{ once: false }}
             >
               Discover the array of technologies and tools that drive my

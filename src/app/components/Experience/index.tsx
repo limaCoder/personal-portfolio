@@ -9,7 +9,6 @@ export function Experience({ company }: IExperienceProps) {
       className="grid grid-cols-[40px,1fr] gap-4 md:gap-10"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col items-center gap-4">

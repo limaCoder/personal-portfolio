@@ -10,9 +10,9 @@ import {
 import { ISkillCollapsibleProps } from "./types";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransition";
 import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 import { childVariants } from "@/app/lib/framer-motion/childVariants";
+
 import { getSkills } from "@/app/services/notion/skills";
 
 export const revalidate = 1000 * 60 * 60;
@@ -31,8 +31,7 @@ export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
       variants={scrollVariants}
       initial="hidden"
       whileInView="visible"
-      transition={await scrollTransition(3)}
-      viewport={{ once: false }}
+      transition={{ duration: 0.9 }}
     >
       <Collapsible
         className="flex flex-col justify-center items-center gap-12"

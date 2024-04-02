@@ -28,7 +28,7 @@ export async function ProjectsSection() {
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              transition={await scrollTransition(1)}
+              transition={{ duration: 0.5 }}
               viewport={{ once: false }}
             >
               Projects
@@ -38,7 +38,7 @@ export async function ProjectsSection() {
               variants={scrollVariants}
               initial="hidden"
               whileInView="visible"
-              transition={await scrollTransition(2)}
+              transition={{ duration: 0.7 }}
               viewport={{ once: false }}
             >
               Here are some of the personal projects I have worked on.

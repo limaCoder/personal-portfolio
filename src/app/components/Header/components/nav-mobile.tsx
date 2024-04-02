@@ -32,7 +32,6 @@ export const NavMobile = () => {
           <MotionDiv
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className="fixed left-0 shadow-4xl right-0 h-full top-24 p-5 bg-neutral-950 border-b border-b-white/20"
           >

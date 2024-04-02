@@ -2,9 +2,7 @@ import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 
 import { IProjectProps } from "./types";
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
-import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 
 export function Project({
   projectName,
@@ -16,15 +14,13 @@ export function Project({
   projectLink,
 }: IProjectProps) {
   return (
-    <div className="flex flex-col lg:flex-row justify-between border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark">
-      <MotionDiv
-        className="flex flex-col lg:flex-row gap-5"
-        variants={scrollVariants}
-        initial="hidden"
-        whileInView="visible"
-        transition={scrollTransition(3)}
-        viewport={{ once: false }}
-      >
+    <MotionDiv
+      className="flex flex-col lg:flex-row justify-between border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.9 }}
+    >
+      <div className="flex flex-col lg:flex-row gap-5">
         <Image
           className="rounded-lg w-full lg:max-w-64 lg:min-h-[140px]"
           src={projectImage}
@@ -51,15 +47,8 @@ export function Project({
             </span>
           </div>
         </div>
-      </MotionDiv>
-      <MotionDiv
-        className="flex flex-col self-end lg:self-center"
-        variants={scrollVariants}
-        initial="hidden"
-        whileInView="visible"
-        transition={scrollTransition(4)}
-        viewport={{ once: false }}
-      >
+      </div>
+      <div className="flex flex-col self-end lg:self-center">
         <a
           className="cursor-pointer hover:brightness-150 transition"
           href={projectLink}
@@ -72,7 +61,7 @@ export function Project({
             <FiArrowUpRight size={24} className="text-custom_primary-light" />
           </div>
         </a>
-      </MotionDiv>
-    </div>
+      </div>
+    </MotionDiv>
   );
 }
