@@ -78,7 +78,7 @@ export function ServicesSection() {
                         size={24}
                         className="text-custom_primary-light"
                       />
-                      <h3 className="text-start font-headline_three text-custom_white-light">
+                      <h3 className="font-headline_three text-custom_white-light text-center sm:text-start">
                         Mobile Development
                       </h3>
                     </AccordionTrigger>

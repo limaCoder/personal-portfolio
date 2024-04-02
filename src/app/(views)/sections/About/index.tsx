@@ -37,7 +37,7 @@ export async function AboutSection() {
         </div>
       </div>
       <div className="absolute inset-0 z-10 bg-gradient_secondary opacity-90"></div>
-      <div className="z-20 container flex flex-col justify-end items-center relative h-full">
+      <div className="z-20 container flex flex-col justify-center items-center relative min-h-screen">
         <div className="flex flex-col gap-10">
           <MotionHeadlineTwo
             className="font-headline_one text-custom_white-light"
