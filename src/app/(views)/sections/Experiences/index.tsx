@@ -4,6 +4,8 @@ import { getExperiences } from "@/app/services/notion/experiences";
 export async function ExperiencesSection() {
   const companies = await getExperiences();
 
+  const orderedCompanies = companies.sort((a, b) => a.id - b.id);
+
   return (
     <section
       id="experiences"
@@ -15,7 +17,7 @@ export async function ExperiencesSection() {
             Professional Experiences
           </h2>
           <div className="max-w-[1002px]">
-            {companies.map((company) => (
+            {orderedCompanies.map((company) => (
               <Experience key={company.name} company={company} />
             ))}
           </div>
