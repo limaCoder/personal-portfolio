@@ -1,5 +1,4 @@
 import { BackgroundBeams } from "@/app/components/ui/background-beams";
-import { Project } from "@/app/components/Project";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import {
@@ -8,6 +7,12 @@ import {
 } from "@/app/lib/framer-motion/MotionComponents";
 
 import { getProjects } from "@/app/services/notion/projects";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+const Project = dynamic(() =>
+  import("@/app/components/Project").then((mod) => mod.Project)
+);
 
 export const revalidate = 1000 * 60 * 60;
 
@@ -44,18 +49,20 @@ export async function ProjectsSection() {
             </MotionParagraph>
           </div>
           <div className="flex flex-col">
-            {projects.map((project) => (
-              <Project
-                key={project.id}
-                projectName={project.projectName}
-                projectImage={project.projectImage}
-                projectImageAltText={project.projectImageAltText}
-                techImage={project.techImage}
-                techImageAltText={project.techImageAltText}
-                techName={project.techName}
-                projectLink={project.projectLink}
-              />
-            ))}
+            <Suspense>
+              {projects.map((project) => (
+                <Project
+                  key={project.id}
+                  projectName={project.projectName}
+                  projectImage={project.projectImage}
+                  projectImageAltText={project.projectImageAltText}
+                  techImage={project.techImage}
+                  techImageAltText={project.techImageAltText}
+                  techName={project.techName}
+                  projectLink={project.projectLink}
+                />
+              ))}
+            </Suspense>
           </div>
         </div>
       </div>

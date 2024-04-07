@@ -1,5 +1,5 @@
+import React from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { Skill } from "../Skill";
 
 import {
   Collapsible,
@@ -14,6 +14,12 @@ import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 import { childVariants } from "@/app/lib/framer-motion/childVariants";
 
 import { getSkills } from "@/app/services/notion/skills";
+
+const Skill = React.lazy(() =>
+  import("@/app/components/Skill").then((mod) => ({
+    default: mod.Skill,
+  }))
+);
 
 export const revalidate = 1000 * 60 * 60;
 
