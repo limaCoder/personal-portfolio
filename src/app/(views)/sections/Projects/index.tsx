@@ -2,7 +2,6 @@ import { BackgroundBeams } from "@/app/components/ui/background-beams";
 import { Project } from "@/app/components/Project";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 import {
   MotionHeadlineTwo,
   MotionParagraph,

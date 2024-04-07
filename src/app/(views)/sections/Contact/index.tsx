@@ -1,4 +1,3 @@
-import { FaDiscord } from "react-icons/fa";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 import { ContactForm } from "./components/ContactForm";

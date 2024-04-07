@@ -1,7 +1,6 @@
 import { SkillCollapsible } from "@/app/components/SkillCollapsible";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 import {
   MotionHeadlineTwo,
   MotionParagraph,

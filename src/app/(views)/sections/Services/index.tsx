@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Accordion,
   AccordionContent,
@@ -10,9 +8,6 @@ import {
 import { GridBackground } from "@/app/components/ui/grid-and-dot-background";
 
 import { FiGlobe, FiSmartphone } from "react-icons/fi";
-import { BsCursorFill } from "react-icons/bs";
-
-import Spline from "@splinetool/react-spline";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransition";
@@ -21,12 +16,14 @@ import {
   MotionHeadlineTwo,
 } from "@/app/lib/framer-motion/MotionComponents";
 
+import { ServiceLottie } from "./components/ServiceLottie";
+
 export function ServicesSection() {
   return (
     <section id="services">
       <GridBackground>
         <div className="container min-h-full w-full z-10">
-          <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 w-full h-full justify-around">
+          <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 w-full h-full justify-around items-center">
             <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start h-full gap-14">
               <MotionHeadlineTwo
                 className="font-headline_two text-custom_secondary-light"
@@ -96,25 +93,10 @@ export function ServicesSection() {
                 </Accordion>
               </MotionDiv>
             </div>
-            <MotionDiv
-              className="hidden lg:flex flex-col justify-end items-center gap-8"
-              variants={scrollVariants}
-              initial="hidden"
-              whileInView="visible"
-              transition={scrollTransition(3)}
-              viewport={{ once: false }}
-            >
-              <div className="max-w-[649px] min-h-[32rem] lg:min-h-[643px]">
-                <Spline scene="https://prod.spline.design/3rF4AvPEaLv2Spbq/scene.splinecode" />
-              </div>
-              <div className="flex flex-col lg:flex-row justify-center items-center gap-8 -mt-36">
-                <BsCursorFill size={58} className="text-custom_primary-light" />
-                <p className="font-body_two text-custom_primary-light max-w-[470px] text-center lg:text-start">
-                  Hello, to interact, just click and drag on computers; and
-                  2-finger clicking on smartphones.
-                </p>
-              </div>
-            </MotionDiv>
+
+            <div className="flex flex-col justify-center max-w-[649px] max-h-[643px] h-full">
+              <ServiceLottie />
+            </div>
           </div>
         </div>
       </GridBackground>
