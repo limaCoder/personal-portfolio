@@ -3,7 +3,7 @@
 import { Client } from "@notionhq/client";
 
 import { NotionProjectsDatabaseResponse } from "./types";
-import { env } from "@/app/lib/env/env";
+import { env } from "@/app/lib/env";
 
 const notion = new Client({ auth: env.NOTION_API_KEY });
 

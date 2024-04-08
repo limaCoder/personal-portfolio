@@ -1,4 +1,4 @@
-import { env } from "@/app/lib/env/env";
+import { env } from "@/app/lib/env";
 
 import { NextResponse } from "next/server";
 import { z } from "zod";
