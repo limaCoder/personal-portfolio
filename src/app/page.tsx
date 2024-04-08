@@ -12,7 +12,7 @@ import { getHomePageData } from "./services/hygraph/pages/home";
 export default async function Home() {
   const { page: pageInfo } = await getHomePageData();
 
-  const { workExperiences } = pageInfo;
+  const { workExperiences, projects } = pageInfo;
 
   return (
     <Fragment>
@@ -21,7 +21,7 @@ export default async function Home() {
         <AboutSection />
         <ServicesSection />
         <ExperiencesSection workExperiences={workExperiences} />
-        <ProjectsSection />
+        <ProjectsSection projects={projects} />
         <SkillsSection />
         <ContactSection />
       </main>

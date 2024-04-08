@@ -16,6 +16,20 @@ export const getHomePageData = async (): Promise<HomePageData> => {
           periodInCompany
           description
         }
+        projects {
+          id
+          projectName
+          projectImage {
+            url
+          }
+          projectImageAltText
+          techName
+          techImage {
+            url
+          }
+          techImageAltText
+          projectLink
+        }
       }
     }
   `;

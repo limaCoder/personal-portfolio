@@ -9,6 +9,7 @@ import {
 import { getProjects } from "@/app/services/notion/projects";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import { IProjectsProps } from "./types";
 
 const Project = dynamic(() =>
   import("@/app/components/Project").then((mod) => mod.Project)
@@ -16,9 +17,7 @@ const Project = dynamic(() =>
 
 export const revalidate = 1000 * 60 * 60;
 
-export async function ProjectsSection() {
-  const projects = await getProjects();
-
+export async function ProjectsSection({ projects }: IProjectsProps) {
   return (
     <section
       id="projects"
@@ -54,9 +53,9 @@ export async function ProjectsSection() {
                 <Project
                   key={project.id}
                   projectName={project.projectName}
-                  projectImage={project.projectImage}
+                  projectImage={project.projectImage.url}
                   projectImageAltText={project.projectImageAltText}
-                  techImage={project.techImage}
+                  techImage={project.techImage.url}
                   techImageAltText={project.techImageAltText}
                   techName={project.techName}
                   projectLink={project.projectLink}
