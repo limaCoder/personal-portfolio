@@ -7,15 +7,20 @@ import { ExperiencesSection } from "./(views)/sections/Experiences";
 import { ProjectsSection } from "./(views)/sections/Projects";
 import { SkillsSection } from "./(views)/sections/Skills";
 import { ContactSection } from "./(views)/sections/Contact";
+import { getHomePageData } from "./services/hygraph/pages/home";
 
-export default function Home() {
+export default async function Home() {
+  const { page: pageInfo } = await getHomePageData();
+
+  const { workExperiences } = pageInfo;
+
   return (
     <Fragment>
       <main>
         <HeroSection />
         <AboutSection />
         <ServicesSection />
-        <ExperiencesSection />
+        <ExperiencesSection workExperiences={workExperiences} />
         <ProjectsSection />
         <SkillsSection />
         <ContactSection />
