@@ -18,7 +18,7 @@ export function Project({
       className="flex flex-col lg:flex-row justify-between border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9 }}
+      transition={{ duration: 0.5 }}
     >
       <div className="flex flex-col lg:flex-row gap-5">
         <Image

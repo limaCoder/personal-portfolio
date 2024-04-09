@@ -28,7 +28,7 @@ export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
       variants={scrollVariants}
       initial="hidden"
       whileInView="visible"
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.5 }}
     >
       <Collapsible
         className="flex flex-col justify-center items-center gap-12"
