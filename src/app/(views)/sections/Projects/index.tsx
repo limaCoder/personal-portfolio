@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
 import { BackgroundBeams } from "@/app/components/ui/background-beams";

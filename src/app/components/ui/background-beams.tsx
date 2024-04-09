@@ -136,7 +136,8 @@ export const BackgroundBeams = React.memo(
         </svg>
       </div>
     );
-  }
+  },
+  () => true
 );
 
 BackgroundBeams.displayName = "BackgroundBeams";

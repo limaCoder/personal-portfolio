@@ -6,7 +6,6 @@ import {
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
-import { skillsOrder } from "@/constants/skillsOrder";
 import { ISkillsSectionProps } from "./types";
 
 export async function SkillsSection({ skills }: ISkillsSectionProps) {
