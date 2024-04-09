@@ -10,10 +10,7 @@ import {
 } from "@/app/lib/framer-motion/MotionComponents";
 
 import { IProjectsProps } from "./types";
-
-const Project = dynamic(() =>
-  import("@/app/components/Project").then((mod) => mod.Project)
-);
+import { Project } from "@/app/components/Project";
 
 export async function ProjectsSection({ projects }: IProjectsProps) {
   return (

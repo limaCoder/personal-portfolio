@@ -14,12 +14,7 @@ import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 import { childVariants } from "@/app/lib/framer-motion/childVariants";
 
 import { getSkillsData } from "@/app/services/hygraph/pages/home/skills";
-
-const Skill = React.lazy(() =>
-  import("@/app/components/Skill").then((mod) => ({
-    default: mod.Skill,
-  }))
-);
+import { Skill } from "../Skill";
 
 export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
   const skills = await getSkillsData();

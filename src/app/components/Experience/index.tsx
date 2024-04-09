@@ -19,7 +19,6 @@ export function Experience({ workExperience }: IExperienceProps) {
             alt={`logo ${workExperience.companyName}`}
             width={74}
             height={74}
-            loading="lazy"
           />
         </div>
 
