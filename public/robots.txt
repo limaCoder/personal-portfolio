@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+
+# Host
+Host: https://marioaugustolima.com.br/
+
+# Sitemaps
+Sitemap: https://marioaugustolima.com.br/sitemap.xml
