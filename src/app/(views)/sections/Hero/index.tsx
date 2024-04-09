@@ -15,7 +15,7 @@ export async function HeroSection() {
   return (
     <section id="hero">
       <WavyBackground className="container">
-        <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-around items-center gap-12 lg:gap-0 z-20 relative">
+        <div className="w-full h-full flex flex-col-reverse lg:flex-row justify-around items-center gap-2 lg:gap-0 z-20 relative">
           <div className="max-w-[372px]">
             <MotionParagraph
               className="font-body_one text-custom_white-dark"
