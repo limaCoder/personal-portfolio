@@ -1,3 +1,6 @@
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
 import { BackgroundBeams } from "@/app/components/ui/background-beams";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
@@ -6,16 +9,11 @@ import {
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
-import { getProjects } from "@/app/services/notion/projects";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
 import { IProjectsProps } from "./types";
 
 const Project = dynamic(() =>
   import("@/app/components/Project").then((mod) => mod.Project)
 );
-
-export const revalidate = 1000 * 60 * 60;
 
 export async function ProjectsSection({ projects }: IProjectsProps) {
   return (

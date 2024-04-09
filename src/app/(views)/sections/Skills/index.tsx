@@ -6,23 +6,15 @@ import {
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
-import { getSkills } from "@/app/services/notion/skills";
 import { skillsOrder } from "@/constants/skillsOrder";
+import { ISkillsSectionProps } from "./types";
 
-export async function SkillsSection() {
-  const skills = await getSkills();
-
-  const skillsTypes = skills.map((skill) =>
-    skill.skillType.map((type) => type)
-  );
+export async function SkillsSection({ skills }: ISkillsSectionProps) {
+  const skillsTypes = skills.map((skill) => skill.skillType);
 
   const flatSkillsTypes = skillsTypes.flat();
 
   const uniqueSkillsTypes = Array.from(new Set(flatSkillsTypes));
-
-  const orderedSkills = uniqueSkillsTypes.sort((a, b) => {
-    return skillsOrder.indexOf(a) - skillsOrder.indexOf(b);
-  });
 
   return (
     <section
@@ -57,7 +49,7 @@ export async function SkillsSection() {
             </MotionParagraph>
           </div>
           <div className="flex flex-col gap-16 justify-center items-center">
-            {orderedSkills.map((skillType) => (
+            {uniqueSkillsTypes.map((skillType) => (
               <SkillCollapsible key={skillType} skillType={skillType} />
             ))}
           </div>

@@ -13,7 +13,7 @@ import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
 import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 import { childVariants } from "@/app/lib/framer-motion/childVariants";
 
-import { getSkills } from "@/app/services/notion/skills";
+import { getSkillsData } from "@/app/services/hygraph/pages/home/skills";
 
 const Skill = React.lazy(() =>
   import("@/app/components/Skill").then((mod) => ({
@@ -21,16 +21,12 @@ const Skill = React.lazy(() =>
   }))
 );
 
-export const revalidate = 1000 * 60 * 60;
-
 export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
-  const skills = await getSkills();
+  const skills = await getSkillsData();
 
   const filteredSkills = skills.filter((skill) =>
     skill.skillType.includes(skillType)
   );
-
-  const orderedSkills = filteredSkills.sort((a, b) => a.id - b.id);
 
   return (
     <MotionDiv
@@ -53,19 +49,19 @@ export async function SkillCollapsible({ skillType }: ISkillCollapsibleProps) {
           </div>
         </CollapsibleTrigger>
         <CollapsibleContent className="flex flex-row justify-center items-center flex-wrap gap-6 max-w-[920px] gap-y-10">
-          {orderedSkills.map((skill) => (
+          {filteredSkills.map((skill) => (
             <MotionDiv
-              key={skill.id}
+              key={skill.uniqueId}
               variants={childVariants}
               initial="hidden"
               animate="visible"
             >
               <Skill
-                key={skill.id}
-                name={skill.name}
-                image={skill?.image}
-                alternativeText={skill.alternativeText}
-                description={skill.description}
+                key={skill.uniqueId}
+                name={skill?.name}
+                image={skill?.image?.url}
+                alternativeText={skill?.alternativeText}
+                description={skill?.description}
               />
             </MotionDiv>
           ))}

@@ -30,6 +30,9 @@ export const getHomePageData = async (): Promise<HomePageData> => {
           techImageAltText
           projectLink
         }
+        skills(first: 46, orderBy: uniqueId_ASC) {
+          skillType
+        }
       }
     }
   `;

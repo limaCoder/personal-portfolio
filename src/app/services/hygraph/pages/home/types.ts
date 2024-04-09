@@ -25,9 +25,21 @@ export interface Project {
   projectLink: string;
 }
 
+export interface Skill {
+  uniqueId: number;
+  name: string;
+  skillType: string;
+  description: string;
+  image: {
+    url: string;
+  };
+  alternativeText: string;
+}
+
 export interface HomePageInfo {
   workExperiences: WorkExperience[];
   projects: Project[];
+  skills: Skill[];
 }
 
 export interface HomePageData {
