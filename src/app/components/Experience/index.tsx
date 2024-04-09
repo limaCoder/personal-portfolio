@@ -2,10 +2,10 @@ import Image from "next/image";
 import { IExperienceProps } from "./types";
 import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 
-export function Experience({ company }: IExperienceProps) {
+export function Experience({ workExperience }: IExperienceProps) {
   return (
     <MotionDiv
-      key={company.name}
+      key={workExperience.companyName}
       className="grid grid-cols-[40px,1fr] gap-4 md:gap-10"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -15,8 +15,8 @@ export function Experience({ company }: IExperienceProps) {
         <div className="rounded-lg border border-custom_white-light">
           <Image
             className="rounded-lg"
-            src={company.imageUrl}
-            alt={`logo ${company.name}`}
+            src={workExperience.companyImage.url}
+            alt={`logo ${workExperience.companyName}`}
             width={74}
             height={74}
             loading="lazy"
@@ -28,20 +28,20 @@ export function Experience({ company }: IExperienceProps) {
 
       <div>
         <div className="flex flex-col gap-2 text-sm sm:text-base">
-          <a href={company.companyURL} rel="noreferrer">
+          <a href={workExperience.companyUrl} rel="noreferrer">
             <h3 className="font-headline_four text-custom_white-dark">
-              @ {company.name}
+              @ {workExperience.companyName}
             </h3>
           </a>
           <h4 className="font-headline_four text-custom_white-light">
-            {company.role}
+            {workExperience.role}
           </h4>
           <span className="font-body_one text-custom_white-dark">
-            {company.periodInCompany}
+            {workExperience.periodInCompany}
           </span>
           <div className="pb-20">
             <p className="font-body_one text-custom_white-light">
-              {company.description}
+              {workExperience.description}
             </p>
           </div>
         </div>

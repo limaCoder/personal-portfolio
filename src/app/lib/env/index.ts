@@ -8,6 +8,8 @@ export const env = createEnv({
     NOTION_EXPERIENCES_DATABASE_ID: z.string(),
     NOTION_PROJECTS_DATABASE_ID: z.string(),
     NOTION_SKILLS_DATABASE_ID: z.string(),
+    HYGRAPH_URL: z.string(),
+    HYGRAPH_TOKEN: z.string(),
   },
 
   client: {
@@ -24,5 +26,7 @@ export const env = createEnv({
     NOTION_EXPERIENCES_DATABASE_ID: process.env.NOTION_EXPERIENCES_DATABASE_ID,
     NOTION_PROJECTS_DATABASE_ID: process.env.NOTION_PROJECTS_DATABASE_ID,
     NOTION_SKILLS_DATABASE_ID: process.env.NOTION_SKILLS_DATABASE_ID,
+    HYGRAPH_URL: process.env.HYGRAPH_URL,
+    HYGRAPH_TOKEN: process.env.HYGRAPH_TOKEN,
   },
 });

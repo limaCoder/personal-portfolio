@@ -1,10 +1,10 @@
 import { Experience } from "@/app/components/Experience";
-import { getExperiences } from "@/app/services/notion/experiences";
+import { IExperiencesProps } from "./types";
 
-export async function ExperiencesSection() {
-  const companies = await getExperiences();
-
-  const orderedCompanies = companies.sort((a, b) => a.id - b.id);
+export function ExperiencesSection({ workExperiences }: IExperiencesProps) {
+  const orderedWorkExperiences = workExperiences?.sort(
+    (a, b) => a.uniqueId - b.uniqueId
+  );
 
   return (
     <section
@@ -17,8 +17,11 @@ export async function ExperiencesSection() {
             Professional Experiences
           </h2>
           <div className="max-w-[1002px]">
-            {orderedCompanies.map((company) => (
-              <Experience key={company.name} company={company} />
+            {orderedWorkExperiences?.map((workExperience) => (
+              <Experience
+                key={workExperience.companyName}
+                workExperience={workExperience}
+              />
             ))}
           </div>
         </div>
