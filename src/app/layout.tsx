@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   keywords:
     "developer, engineer, frontend, mobile, react, javascript, nextjs, typescript, react native",
   icons: {
-    icon: "/logo/logo.ico",
+    icon: "/logo.ico",
   },
   openGraph: {
     type: "website",
