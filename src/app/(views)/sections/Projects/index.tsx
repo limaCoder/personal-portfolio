@@ -2,16 +2,10 @@ import { Suspense } from "react";
 
 import { BackgroundBeams } from "@/app/components/ui/background-beams";
 
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import {
-  MotionHeadlineTwo,
-  MotionParagraph,
-} from "@/app/lib/framer-motion/MotionComponents";
-
 import { IProjectsProps } from "./types";
 import { Project } from "@/app/components/Project";
 
-export async function ProjectsSection({ projects }: IProjectsProps) {
+export function ProjectsSection({ projects }: IProjectsProps) {
   return (
     <section
       id="projects"
@@ -20,26 +14,12 @@ export async function ProjectsSection({ projects }: IProjectsProps) {
       <div className="container relative h-full w-full z-20">
         <div className="flex flex-col gap-12 lg:gap-20">
           <div className="flex flex-col gap-8">
-            <MotionHeadlineTwo
-              className="font-headline_one text-custom_secondary-light"
-              variants={scrollVariants}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.5 }}
-              viewport={{ once: false }}
-            >
+            <h2 className="font-headline_one text-custom_secondary-light">
               Projects
-            </MotionHeadlineTwo>
-            <MotionParagraph
-              className="font-body_two text-custom_white-dark"
-              variants={scrollVariants}
-              initial="hidden"
-              whileInView="visible"
-              transition={{ duration: 0.7 }}
-              viewport={{ once: false }}
-            >
+            </h2>
+            <p className="font-body_two text-custom_white-dark">
               Here are some of the personal projects I have worked on.
-            </MotionParagraph>
+            </p>
           </div>
           <div className="flex flex-col">
             <Suspense>

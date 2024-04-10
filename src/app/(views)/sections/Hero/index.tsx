@@ -21,9 +21,8 @@ export async function HeroSection() {
               className="font-body_one text-custom_white-dark"
               variants={scrollVariants}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               transition={await scrollTransition(1)}
-              viewport={{ once: false }}
             >
               Hi, there!
               <strong className="text-custom_white-light ml-1">
@@ -34,9 +33,8 @@ export async function HeroSection() {
               className="font-headline_one text-custom_secondary-light mt-2 mb-6"
               variants={scrollVariants}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               transition={await scrollTransition(2)}
-              viewport={{ once: false }}
             >
               Front-end Developer
             </MotionHeadlineOne>
@@ -44,9 +42,8 @@ export async function HeroSection() {
               className="font-body_one text-custom_white-dark"
               variants={scrollVariants}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               transition={await scrollTransition(3)}
-              viewport={{ once: false }}
             >
               My journey is creating digital experiences that captivate and
               engage both you and your audience.
@@ -55,9 +52,8 @@ export async function HeroSection() {
               className="flex flex-column lg:flex-row gap-7 mt-8 items-center"
               variants={scrollVariants}
               initial="hidden"
-              whileInView="visible"
+              animate="visible"
               transition={await scrollTransition(4)}
-              viewport={{ once: false }}
             >
               <a
                 role="button"
@@ -89,12 +85,11 @@ export async function HeroSection() {
             </MotionDiv>
           </div>
           <MotionDiv
-            className="relative w-min-auto min-h-auto lg:min-w-[521px] lg:min-h-[677]"
+            className="hidden lg:block relative w-min-auto min-h-auto lg:min-w-[521px] lg:min-h-[677]"
             variants={scrollVariants}
             initial="hidden"
-            whileInView="visible"
+            animate="visible"
             transition={await scrollTransition(5)}
-            viewport={{ once: false }}
           >
             <Image
               src="/pages/home/hero/avatar-image.webp"

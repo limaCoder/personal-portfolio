@@ -92,9 +92,8 @@ export function ContactForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         variants={scrollVariants}
         initial="hidden"
-        whileInView="visible"
+        animate="visible"
         transition={scrollTransition(6)}
-        viewport={{ once: false }}
       >
         <FormField
           control={form.control}

@@ -10,11 +10,7 @@ import { GridBackground } from "@/app/components/ui/grid-and-dot-background";
 import { FiGlobe, FiSmartphone } from "react-icons/fi";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransition";
-import {
-  MotionDiv,
-  MotionHeadlineTwo,
-} from "@/app/lib/framer-motion/MotionComponents";
+import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
 
 import { ServiceLottie } from "./components/ServiceLottie";
 
@@ -25,21 +21,14 @@ export function ServicesSection() {
         <div className="container min-h-full w-full z-10">
           <div className="flex flex-col-reverse lg:flex-row gap-6 lg:gap-0 w-full h-full justify-around items-center">
             <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start h-full gap-14">
-              <MotionHeadlineTwo
-                className="font-headline_two text-custom_secondary-light"
-                variants={scrollVariants}
-                initial="hidden"
-                whileInView="visible"
-                transition={scrollTransition(1)}
-                viewport={{ once: false }}
-              >
+              <h2 className="font-headline_two text-custom_secondary-light">
                 Services
-              </MotionHeadlineTwo>
+              </h2>
               <MotionDiv
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={scrollTransition(2)}
+                transition={{ duration: 0.5 }}
               >
                 <Accordion
                   className="flex flex-col h-full justify-center gap-16 max-w-[379px]"

@@ -18,7 +18,7 @@ export function Skill({
 }: ISkillProps) {
   return (
     <TooltipProvider>
-      <Tooltip delayDuration={0}>
+      <Tooltip>
         <TooltipTrigger>
           <BackgroundGradient className="flex flex-row pl-2 gap-4 items-center w-[202px] min-h-16 bg-custom_black-light shadow-[0_15px_20px_4px_rgba(0,0,0,0.25)]">
             <div className="flex justify-center items-center bg-gradient_dark_vertical w-10 h-10 rounded-sm">
@@ -30,7 +30,7 @@ export function Skill({
                 height={32}
               />
             </div>
-            <span className="font-body_two text-custom_white-light max-w-[108px]">
+            <span className="font-body_two text-custom_white-light max-w-[108px] text-left">
               {name}
             </span>
           </BackgroundGradient>

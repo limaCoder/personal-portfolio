@@ -4,14 +4,12 @@ import { FiInfo } from "react-icons/fi";
 import { carouselImages } from "./carouselImages";
 
 import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
 import {
   MotionDiv,
-  MotionHeadlineTwo,
   MotionParagraph,
 } from "@/app/lib/framer-motion/MotionComponents";
 
-export async function AboutSection() {
+export function AboutSection() {
   return (
     <section
       id="about"
@@ -39,16 +37,9 @@ export async function AboutSection() {
       <div className="absolute inset-0 z-10 bg-gradient_secondary opacity-90"></div>
       <div className="z-20 container flex flex-col justify-center items-center relative min-h-screen xl:min-h-[50vh]">
         <div className="flex flex-col gap-10">
-          <MotionHeadlineTwo
-            className="font-headline_one text-custom_white-light"
-            variants={scrollVariants}
-            initial="hidden"
-            whileInView="visible"
-            transition={await scrollTransition(1)}
-            viewport={{ once: false }}
-          >
+          <h2 className="font-headline_one text-custom_white-light">
             About me
-          </MotionHeadlineTwo>
+          </h2>
           <div className="flex flex-col lg:flex-row gap-14">
             <div className="flex flex-col max-w-[425px]">
               <MotionParagraph
@@ -56,8 +47,7 @@ export async function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={await scrollTransition(2)}
-                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
               >
                 I am a passionate Frontend Developer with a self-taught journey
                 and a career-focused vision with +3 years of experience,
@@ -72,8 +62,7 @@ export async function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={await scrollTransition(3)}
-                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
               >
                 My professional journey is distinguished by collaborations with
                 prominent clients and companies, including Azul Airlines,
@@ -87,8 +76,7 @@ export async function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={await scrollTransition(4)}
-                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
               >
                 Embracing continuous learning and improvement, I leverage every
                 project as an opportunity to advance my expertise and contribute
@@ -101,8 +89,7 @@ export async function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={await scrollTransition(5)}
-                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
               >
                 <div className="flex flex-row items-center gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
@@ -130,8 +117,7 @@ export async function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={await scrollTransition(6)}
-                viewport={{ once: false }}
+                transition={{ duration: 0.5 }}
               >
                 <p className="font_body_two text-custom_white-light">
                   <strong className="text-custom_primary mr-1">Age:</strong>22

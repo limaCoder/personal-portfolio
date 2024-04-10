@@ -3,6 +3,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 import { IProjectProps } from "./types";
 import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
+import { childVariants } from "@/app/lib/framer-motion/childVariants";
 
 export function Project({
   projectName,
@@ -15,10 +16,10 @@ export function Project({
 }: IProjectProps) {
   return (
     <MotionDiv
-      className="flex flex-col lg:flex-row justify-between border-y-2 py-8 pr-8 gap-6 lg:gap-0 border-y-custom_white-dark"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      className="flex flex-col lg:flex-row justify-between border-y-2 py-8 gap-6 lg:gap-0 border-y-custom_white-dark"
+      variants={childVariants}
+      initial="hidden"
+      whileInView="visible"
     >
       <div className="flex flex-col lg:flex-row gap-5">
         <Image

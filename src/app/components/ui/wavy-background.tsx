@@ -114,7 +114,7 @@ export const WavyBackground = ({
   return (
     <div
       className={cn(
-        "min-h-screen w-full bg-gradient_dark relative py-10 lg:py-20 flex flex-col items-center justify-center",
+        "min-h-[85vh] lg:min-h-screen w-full bg-gradient_dark relative py-10 lg:py-20 flex flex-col items-center justify-center",
         containerClassName
       )}
     >
