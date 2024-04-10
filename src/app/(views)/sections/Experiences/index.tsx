@@ -9,7 +9,7 @@ export function ExperiencesSection({ workExperiences }: IExperiencesProps) {
   return (
     <section
       id="experiences"
-      className="min-h-screen w-full relative py-20 bg-gradient_dark"
+      className="min-h-screen xl:min-h-[85vh] w-full relative py-20 bg-gradient_dark"
     >
       <div className="container h-full w-full">
         <div className="flex flex-col justify-center items-center gap-20">

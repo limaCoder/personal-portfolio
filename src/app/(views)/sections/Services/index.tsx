@@ -57,7 +57,7 @@ export function ServicesSection() {
                       </h3>
                     </AccordionTrigger>
                     <AccordionContent className="font-body_two text-custom_white-dark pt-6">
-                      Specializing in crafting custom web solutions, bringing
+                      Specializing in creating custom web solutions, bringing
                       ideas to life with dynamic and responsive designs that
                       ensure superior user experiences. Utilizing cutting-edge
                       technologies like ReactJS, Next.js, and TypeScript to

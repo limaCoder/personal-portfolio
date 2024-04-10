@@ -15,10 +15,10 @@ export async function AboutSection() {
   return (
     <section
       id="about"
-      className="min-h-screen w-full relative py-16 bg-gradient_dark -z-20"
+      className="min-h-screen xl:min-h-[50vh] w-full relative py-16 bg-gradient_dark -z-20"
     >
-      <div className="w-full min-h-screen p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
-        <div className="w-full h-full flex flex-row justify-start items-start animate-carousel_images">
+      <div className="w-full min-h-screen xl:min-h-[50vh] p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
+        <div className="w-full h-full xl:min-h-[50vh] flex flex-row justify-start items-start animate-carousel_images">
           {carouselImages.map((carouselImage) => (
             <div
               key={carouselImage.id}
@@ -37,7 +37,7 @@ export async function AboutSection() {
         </div>
       </div>
       <div className="absolute inset-0 z-10 bg-gradient_secondary opacity-90"></div>
-      <div className="z-20 container flex flex-col justify-center items-center relative min-h-screen">
+      <div className="z-20 container flex flex-col justify-center items-center relative min-h-screen xl:min-h-[50vh]">
         <div className="flex flex-col gap-10">
           <MotionHeadlineTwo
             className="font-headline_one text-custom_white-light"

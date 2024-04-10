@@ -15,7 +15,7 @@ export async function ProjectsSection({ projects }: IProjectsProps) {
   return (
     <section
       id="projects"
-      className="min-h-screen w-full relative py-20 bg-gradient_dark"
+      className="min-h-screen xl:min-h-[50vh] w-full relative py-20 bg-gradient_dark"
     >
       <div className="container relative h-full w-full z-20">
         <div className="flex flex-col gap-12 lg:gap-20">

@@ -48,7 +48,7 @@ export async function HeroSection() {
               transition={await scrollTransition(3)}
               viewport={{ once: false }}
             >
-              My journey is crafting digital experiences that captivate and
+              My journey is creating digital experiences that captivate and
               engage both you and your audience.
             </MotionParagraph>
             <MotionDiv

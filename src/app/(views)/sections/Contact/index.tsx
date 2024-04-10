@@ -17,7 +17,7 @@ export async function ContactSection() {
   return (
     <section
       id="contact"
-      className="min-h-[75vh] w-full relative py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02] overflow-hidden"
+      className="min-h-[75vh] xl:min-h-[40vh] w-full relative py-20 bg-black/[0.96] antialiased bg-grid-white/[0.02] overflow-hidden"
     >
       <MotionDiv
         variants={scrollVariants}
@@ -31,8 +31,8 @@ export async function ContactSection() {
           fill="white"
         />
       </MotionDiv>
-      <div className="container min-h-[75vh]">
-        <div className="min-h-[75vh] flex flex-col-reverse lg:flex-row gap-12 lg:gap-0 justify-around">
+      <div className="container min-h-[75vh] xl:min-h-[40vh]">
+        <div className="min-h-[75vh] xl:min-h-[40vh] flex flex-col-reverse lg:flex-row gap-12 lg:gap-0 justify-around">
           <div className="flex flex-col justify-center items-center lg:justify-start lg:items-start gap-8">
             <div className="flex flex-col gap-12">
               <MotionHeadlineThree
