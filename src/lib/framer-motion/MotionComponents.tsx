@@ -1,27 +1,155 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, MotionProps } from "motion/react";
+import { cn } from "@/lib/tailwind/cn";
+import { ComponentProps } from "react";
 
-export const MotionDiv = motion.div;
+export const MotionDiv = ({
+  children,
+  className,
+  ...props
+}: { children?: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.div {...props} className={cn(className)}>
+      {children}
+    </motion.div>
+  );
+};
 
-export const MotionListItem = motion.li;
+export const MotionSection = ({
+  children,
+  className,
+  id,
+  ...props
+}: {
+  children: React.ReactNode;
+  className?: string;
+  id?: string;
+} & MotionProps) => {
+  return (
+    <motion.section {...props} className={cn(className)} id={id}>
+      {children}
+    </motion.section>
+  );
+};
 
-export const MotionHeadlineOne = motion.h1;
+export const MotionListItem = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.li {...props} className={cn(className)}>
+      {children}
+    </motion.li>
+  );
+};
 
-export const MotionHeadlineTwo = motion.h2;
+export const MotionHeadlineOne = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.h1 {...props} className={cn(className)}>
+      {children}
+    </motion.h1>
+  );
+};
 
-export const MotionHeadlineThree = motion.h3;
+export const MotionHeadlineTwo = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.h2 {...props} className={cn(className)}>
+      {children}
+    </motion.h2>
+  );
+};
 
-export const MotionHeadlineFour = motion.h4;
+export const MotionHeadlineThree = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.h3 {...props} className={cn(className)}>
+      {children}
+    </motion.h3>
+  );
+};
 
-export const MotionHeadlineFive = motion.h5;
+export const MotionHeadlineFour = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.h4 {...props} className={cn(className)}>
+      {children}
+    </motion.h4>
+  );
+};
 
-export const MotionHeadlineSix = motion.h6;
+export const MotionHeadlineFive = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.h5 {...props} className={cn(className)}>
+      {children}
+    </motion.h5>
+  );
+};
 
-export const MotionParagraph = motion.p;
+export const MotionParagraph = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.p {...props} className={cn(className)}>
+      {children}
+    </motion.p>
+  );
+};
 
-export const MotionSpan = motion.span;
+export const MotionSpan = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.span {...props} className={cn(className)}>
+      {children}
+    </motion.span>
+  );
+};
 
-export const MotionButton = motion.button;
+export const MotionButton = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps) => {
+  return (
+    <motion.button {...props} className={cn(className)}>
+      {children}
+    </motion.button>
+  );
+};
 
-export const MotionForm = motion.form;
+export const MotionForm = ({
+  children,
+  className,
+  ...props
+}: { children: React.ReactNode; className?: string } & MotionProps &
+  ComponentProps<"form">) => {
+  return (
+    <motion.form {...props} className={cn(className)}>
+      {children}
+    </motion.form>
+  );
+};

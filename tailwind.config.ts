@@ -45,7 +45,7 @@ const config: Config = {
     extend: {
       animation: {
         shimmer: "shimmer 2s linear infinite",
-        carousel_images: "carousel_images 25s ease-in-out infinite alternate",
+        carousel_images: "carousel_images 40s linear infinite alternate",
         spotlight: "spotlight 2s ease .75s 1 forwards",
         aurora: "aurora 60s linear infinite",
       },
@@ -67,11 +67,11 @@ const config: Config = {
           },
         },
         carousel_images: {
-          from: {
-            transform: "translate3d(0, -64px, 0) translateX(0%)",
+          "0%": {
+            transform: "translateX(0%)",
           },
-          to: {
-            transform: "translate3d(0, -64px, 0) translateX(-100%)",
+          "100%": {
+            transform: "translateX(-60%)",
           },
         },
         spotlight: {

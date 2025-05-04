@@ -14,10 +14,18 @@ export function Footer() {
             height={71}
             width={71}
           />
-          <p className="font-body_two text-custom_white-dark text-center">
-            © {currentYear} | Portfolio website designed and developed by Mario
-            Augusto de Lima
-          </p>
+          <div>
+            <p className="font-body_two text-custom_white-dark text-center">
+              © {currentYear} | Portfolio website designed and developed by
+              Mario Augusto de Lima
+            </p>
+            <a
+              href="#"
+              className="font-body_three font-bold text-custom_primary-light mt-1"
+            >
+              CNPJ: 57.996.361/0001-57
+            </a>
+          </div>
         </div>
       </div>
     </footer>

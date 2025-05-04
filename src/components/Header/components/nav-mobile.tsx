@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { useClickAway } from "react-use";
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { Squash as Hamburger } from "hamburger-react";
 
 import { routes } from "../routes";
@@ -33,7 +33,7 @@ export const NavMobile = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.2 }}
-            className="fixed left-0 shadow-4xl right-0 h-full top-24 p-5 bg-neutral-950 border-b border-b-white/20"
+            className="fixed left-0 shadow-4xl right-0 top-24 p-5 bg-custom_black border-b border-b-white/20"
           >
             <ul className="grid gap-2">
               {routes.map((route, idx) => {

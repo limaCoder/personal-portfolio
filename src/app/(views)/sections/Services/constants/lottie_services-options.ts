@@ -1,4 +1,4 @@
-import * as servicesAnimation from "@/app/assets/lottie/services-lottie.json";
+import * as servicesAnimation from "@/assets/lottie/services-lottie.json";
 
 export const servicesAnimationOptions = {
   loop: true,

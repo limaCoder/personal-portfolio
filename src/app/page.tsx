@@ -16,7 +16,7 @@ export default async function Home() {
 
   return (
     <Fragment>
-      <main>
+      <main className="pt-20 lg:pt-0 bg-gradient_dark">
         <HeroSection />
         <AboutSection />
         <ServicesSection />

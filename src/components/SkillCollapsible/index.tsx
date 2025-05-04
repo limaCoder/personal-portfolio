@@ -9,7 +9,6 @@ import {
 
 import { ISkillCollapsibleProps } from "./types";
 
-import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
 import { MotionDiv } from "@/lib/framer-motion/MotionComponents";
 import { childVariants } from "@/lib/framer-motion/childVariants";
 

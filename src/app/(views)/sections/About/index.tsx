@@ -3,21 +3,24 @@ import { FiInfo } from "react-icons/fi";
 
 import { carouselImages } from "./carouselImages";
 
-import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
 import {
   MotionDiv,
   MotionParagraph,
 } from "@/lib/framer-motion/MotionComponents";
+import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
+import { GlowEffect } from "@/components/ui/glow-effect";
 
 export function AboutSection() {
+  const age = new Date().getFullYear() - 2001;
+
   return (
     <section
       id="about"
-      className="min-h-screen xl:min-h-[50vh] w-full relative py-16 bg-gradient_dark -z-20"
+      className="min-h-screen xl:min-h-[50vh] w-full relative py-16 bg-gradient_dark"
     >
-      <div className="w-full min-h-screen xl:min-h-[50vh] p-0 absolute top-0 left-0 -z-10 overflow-hidden border-t-2 border-t-custom_primary">
+      <div className="w-full min-h-screen xl:min-h-[50vh] p-0 absolute top-0 left-0 overflow-hidden border-t-2 border-t-custom_primary">
         <div className="w-full h-full xl:min-h-[50vh] flex flex-row justify-start items-start animate-carousel_images">
-          {carouselImages.map((carouselImage) => (
+          {carouselImages.map((carouselImage, index) => (
             <div
               key={carouselImage.id}
               className="relative min-w-[590px] h-[1080px]"
@@ -28,7 +31,10 @@ export function AboutSection() {
                 alt={carouselImage.alt}
                 width={carouselImage?.width}
                 height={carouselImage?.height}
-                loading="lazy"
+                loading={index === 0 ? "eager" : "lazy"}
+                priority={index === 0}
+                fetchPriority={index === 0 ? "high" : "low"}
+                sizes="(max-width: 768px) 100vw, 590px"
               />
             </div>
           ))}
@@ -47,22 +53,24 @@ export function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.3 }}
               >
-                I am a passionate Frontend Developer with a self-taught journey
-                and a career-focused vision with +3 years of experience,
+                I am a passionate Software Engineer with a self-taught journey
+                and a career-focused vision with +4 years of experience,
                 specializing in creating elegant web interfaces and interactive
                 experiences. I started my career in 2020, when I dove deep into
                 the world of web and mobile development, with cutting-edge
-                technologies like ReactJS, React Native, Next.js, and
-                TypeScript.
+                technologies like ReactJS, React Native, Next.js, TypeScript and
+                Node.js.
               </MotionParagraph>
               <MotionParagraph
                 className="mb-6 text-custom_white-dark font-body_two"
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
               >
                 My professional journey is distinguished by collaborations with
                 prominent clients and companies, including Azul Airlines,
@@ -76,7 +84,8 @@ export function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
               >
                 Embracing continuous learning and improvement, I leverage every
                 project as an opportunity to advance my expertise and contribute
@@ -89,7 +98,8 @@ export function AboutSection() {
                 variants={scrollVariants}
                 initial="hidden"
                 whileInView="visible"
-                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.3 }}
               >
                 <div className="flex flex-row items-center gap-4">
                   <FiInfo size={24} className="text-custom_primary-light" />
@@ -112,33 +122,45 @@ export function AboutSection() {
                   </p>
                 </div>
               </MotionDiv>
-              <MotionDiv
-                className="flex flex-col md:self-center lg:self-start w-full lg:max-w-[352px] h-[208px] px-4 py-6 gap-5 bg-gradient_dark border-r-2 border-b-2 border-r-custom_primary-dark border-b-custom_primary"
-                variants={scrollVariants}
-                initial="hidden"
-                whileInView="visible"
-                transition={{ duration: 0.5 }}
-              >
-                <p className="font_body_two text-custom_white-light">
-                  <strong className="text-custom_primary mr-1">Age:</strong>22
-                </p>
-                <p className="font_body_two text-custom_white-light">
-                  <strong className="text-custom_primary mr-1">Role:</strong>
-                  Frontend Engineer
-                </p>
-                <p className="font_body_two text-custom_white-light">
-                  <strong className="text-custom_primary mr-1">
-                    Residence:
-                  </strong>
-                  Brazil
-                </p>
-                <p className="font_body_two text-custom_white-light">
-                  <strong className="text-custom_primary mr-1">
-                    Location:
-                  </strong>
-                  Santos, São Paulo
-                </p>
-              </MotionDiv>
+              <div className="relative">
+                <GlowEffect
+                  colors={["#FF5733", "#33FF57", "#3357FF", "#F1C40F"]}
+                  mode="colorShift"
+                  blur="soft"
+                  duration={3}
+                  scale={1.0}
+                  className="-z-10"
+                />
+                <MotionDiv
+                  className="relative z-10 flex flex-col md:self-center lg:self-start w-full lg:max-w-[352px] h-[208px] px-4 py-6 gap-5 bg-gradient_dark border-r-2 border-b-2 border-r-custom_primary-dark border-b-custom_primary"
+                  variants={scrollVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                >
+                  <p className="font_body_two text-custom_white-light">
+                    <strong className="text-custom_primary mr-1">Age:</strong>
+                    {age}
+                  </p>
+                  <p className="font_body_two text-custom_white-light">
+                    <strong className="text-custom_primary mr-1">Role:</strong>
+                    Frontend Engineer
+                  </p>
+                  <p className="font_body_two text-custom_white-light">
+                    <strong className="text-custom_primary mr-1">
+                      Residence:
+                    </strong>
+                    Brazil
+                  </p>
+                  <p className="font_body_two text-custom_white-light">
+                    <strong className="text-custom_primary mr-1">
+                      Location:
+                    </strong>
+                    Santos, São Paulo
+                  </p>
+                </MotionDiv>
+              </div>
             </div>
           </div>
         </div>

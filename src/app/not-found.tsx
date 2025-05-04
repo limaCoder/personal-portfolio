@@ -5,7 +5,7 @@ import { MotionDiv } from "../lib/framer-motion/MotionComponents";
 
 export default function NotFound() {
   return (
-    <AuroraBackground>
+    <AuroraBackground className="h-[100vh]">
       <MotionDiv
         initial={{ opacity: 0.0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

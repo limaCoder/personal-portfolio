@@ -49,20 +49,30 @@ export function Project({
           </div>
         </div>
       </div>
-      <div className="flex flex-col self-end lg:self-center">
-        <a
-          className="cursor-pointer hover:brightness-150 transition"
-          href={projectLink}
-          target="blank"
-        >
+      {projectLink ? (
+        <div className="flex flex-col self-end lg:self-center">
+          <a
+            className="cursor-pointer hover:brightness-150 transition"
+            href={projectLink}
+            target="blank"
+          >
+            <div className="flex flex-row gap-4">
+              <span className="font-body_one text-custom_primary-light">
+                View Project
+              </span>
+              <FiArrowUpRight size={24} className="text-custom_primary-light" />
+            </div>
+          </a>
+        </div>
+      ) : (
+        <div className="flex flex-col self-end lg:self-center">
           <div className="flex flex-row gap-4">
             <span className="font-body_one text-custom_primary-light">
-              View Project
+              In Development
             </span>
-            <FiArrowUpRight size={24} className="text-custom_primary-light" />
           </div>
-        </a>
-      </div>
+        </div>
+      )}
     </MotionDiv>
   );
 }

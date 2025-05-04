@@ -171,7 +171,7 @@ export function ContactForm() {
           )}
         />
         <Button
-          className="bg-custom_primary-dark max-w-[135px]"
+          className="bg-custom_primary-dark max-w-[135px] transition-all duration-1000"
           type="submit"
           disabled={form.formState.isSubmitting}
         >

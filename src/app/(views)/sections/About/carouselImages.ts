@@ -38,20 +38,4 @@ export const carouselImages = [
     width: 590,
     height: 1080,
   },
-  {
-    id: 6,
-    src: "/pages/home/about/slider-image-6.webp",
-    isPriority: false,
-    alt: "Image of Mario Lima",
-    width: 590,
-    height: 1080,
-  },
-  {
-    id: 7,
-    src: "/pages/home/about/slider-image-7.webp",
-    isPriority: false,
-    alt: "Image of Mario Lima",
-    width: 590,
-    height: 1080,
-  },
 ];

@@ -23,16 +23,16 @@ export function ProjectsSection({ projects }: IProjectsProps) {
           </div>
           <div className="flex flex-col">
             <Suspense>
-              {projects.map((project) => (
+              {projects?.map((project) => (
                 <Project
-                  key={project.id}
-                  projectName={project.projectName}
-                  projectImage={project.projectImage.url}
-                  projectImageAltText={project.projectImageAltText}
-                  techImage={project.techImage.url}
-                  techImageAltText={project.techImageAltText}
-                  techName={project.techName}
-                  projectLink={project.projectLink}
+                  key={project?.id}
+                  projectName={project?.projectName}
+                  projectImage={project?.projectImage?.url}
+                  projectImageAltText={project?.projectImageAltText}
+                  techImage={project?.techImage?.url}
+                  techImageAltText={project?.techImageAltText}
+                  techName={project?.techName}
+                  projectLink={project?.projectLink}
                 />
               ))}
             </Suspense>
