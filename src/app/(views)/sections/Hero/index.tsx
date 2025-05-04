@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-import { WavyBackground } from "@/app/components/ui/wavy-background";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
 import {
   MotionDiv,
   MotionHeadlineOne,
   MotionParagraph,
-} from "@/app/lib/framer-motion/MotionComponents";
-import { scrollTransition } from "@/app/lib/framer-motion/server/scrollTransition";
+} from "@/lib/framer-motion/MotionComponents";
+import { scrollTransition } from "@/lib/framer-motion/server/scrollTransition";
 
 export async function HeroSection() {
   return (

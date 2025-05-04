@@ -1,4 +1,4 @@
-import { WorkExperience } from "@/app/services/hygraph/pages/home/types";
+import { WorkExperience } from "@/services/hygraph/pages/home/types";
 
 export interface IExperiencesProps {
   workExperiences: WorkExperience[];

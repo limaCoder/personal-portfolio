@@ -6,7 +6,7 @@ import { z } from "zod";
 
 import { FiArrowUpCircle } from "react-icons/fi";
 
-import { Button } from "@/app/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -14,16 +14,16 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/app/components/ui/form";
-import { Input } from "@/app/components/ui/input";
-import { Textarea } from "@/app/components/ui/textarea";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
-import { scrollTransition } from "@/app/lib/framer-motion/client/scrollTransition";
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { MotionForm } from "@/app/lib/framer-motion/MotionComponents";
+import { scrollTransition } from "@/lib/framer-motion/client/scrollTransition";
+import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
+import { MotionForm } from "@/lib/framer-motion/MotionComponents";
 
-import { api } from "@/app/services/http/api";
-import { useToast } from "@/app/components/ui/use-toast";
+import { api } from "@/services/http/api";
+import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {

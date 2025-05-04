@@ -2,15 +2,15 @@ import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 import { ContactForm } from "./components/ContactForm";
 
-import { Spotlight } from "@/app/components/ui/Spotlight";
-import { Button } from "@/app/components/ui/button";
+import { Spotlight } from "@/components/ui/Spotlight";
+import { Button } from "@/components/ui/button";
 
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
 import {
   MotionDiv,
   MotionHeadlineThree,
   MotionHeadlineTwo,
-} from "@/app/lib/framer-motion/MotionComponents";
+} from "@/lib/framer-motion/MotionComponents";
 
 export function ContactSection() {
   return (

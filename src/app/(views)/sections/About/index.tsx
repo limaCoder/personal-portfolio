@@ -3,11 +3,11 @@ import { FiInfo } from "react-icons/fi";
 
 import { carouselImages } from "./carouselImages";
 
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
+import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
 import {
   MotionDiv,
   MotionParagraph,
-} from "@/app/lib/framer-motion/MotionComponents";
+} from "@/lib/framer-motion/MotionComponents";
 
 export function AboutSection() {
   return (

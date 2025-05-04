@@ -3,14 +3,14 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/app/components/ui/accordion";
+} from "@/components/ui/accordion";
 
-import { GridBackground } from "@/app/components/ui/grid-and-dot-background";
+import { GridBackground } from "@/components/ui/grid-and-dot-background";
 
 import { FiGlobe, FiSmartphone } from "react-icons/fi";
 
-import { scrollVariants } from "@/app/lib/framer-motion/scrollVariants";
-import { MotionDiv } from "@/app/lib/framer-motion/MotionComponents";
+import { scrollVariants } from "@/lib/framer-motion/scrollVariants";
+import { MotionDiv } from "@/lib/framer-motion/MotionComponents";
 
 import { ServiceLottie } from "./components/ServiceLottie";
 

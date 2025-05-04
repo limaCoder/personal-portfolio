@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-import { AuroraBackground } from "./components/ui/aurora-background";
-import { MotionDiv } from "./lib/framer-motion/MotionComponents";
+import { AuroraBackground } from "../components/ui/aurora-background";
+import { MotionDiv } from "../lib/framer-motion/MotionComponents";
 
 export default function NotFound() {
   return (

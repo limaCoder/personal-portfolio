@@ -1,4 +1,4 @@
-import { Experience } from "@/app/components/Experience";
+import { Experience } from "@/components/Experience";
 import { IExperiencesProps } from "./types";
 
 export function ExperiencesSection({ workExperiences }: IExperiencesProps) {

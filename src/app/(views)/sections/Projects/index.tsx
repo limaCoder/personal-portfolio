@@ -1,9 +1,9 @@
 import { Suspense } from "react";
 
-import { BackgroundBeams } from "@/app/components/ui/background-beams";
+import { BackgroundBeams } from "@/components/ui/background-beams";
 
 import { IProjectsProps } from "./types";
-import { Project } from "@/app/components/Project";
+import { Project } from "@/components/Project";
 
 export function ProjectsSection({ projects }: IProjectsProps) {
   return (

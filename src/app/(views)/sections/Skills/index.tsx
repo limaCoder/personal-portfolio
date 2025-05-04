@@ -1,4 +1,4 @@
-import { SkillCollapsible } from "@/app/components/SkillCollapsible";
+import { SkillCollapsible } from "@/components/SkillCollapsible";
 
 import { ISkillsSectionProps } from "./types";
 

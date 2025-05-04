@@ -7,7 +7,7 @@ import { ExperiencesSection } from "./(views)/sections/Experiences";
 import { ProjectsSection } from "./(views)/sections/Projects";
 import { SkillsSection } from "./(views)/sections/Skills";
 import { ContactSection } from "./(views)/sections/Contact";
-import { getHomePageData } from "./services/hygraph/pages/home";
+import { getHomePageData } from "../services/hygraph/pages/home";
 
 export default async function Home() {
   const { page: pageInfo } = await getHomePageData();

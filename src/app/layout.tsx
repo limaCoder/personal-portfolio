@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 import "@/app/ui/globals.css";
-import { cn } from "@/app/lib/tailwind/cn";
+import { cn } from "@/lib/tailwind/cn";
 
-import { fontMuktaVariable, fontSairaVariable } from "./ui/fonts";
+import { fontMuktaVariable, fontSairaVariable } from "../styles/fonts";
 
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
-import { Toaster } from "./components/ui/toaster";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
+import { Toaster } from "../components/ui/toaster";
 
 export const metadata: Metadata = {
   title: "Mario Lima | Portfólio",
