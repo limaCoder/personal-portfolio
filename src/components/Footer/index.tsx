@@ -21,7 +21,7 @@ export function Footer() {
             </p>
             <a
               href="#"
-              className="font-body_three font-bold text-custom_primary-light mt-1"
+              className="block font-body_three font-bold text-custom_primary-light text-center lg:text-left mt-2"
             >
               CNPJ: 57.996.361/0001-57
             </a>
