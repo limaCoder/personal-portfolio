@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img src=".github/logo.svg" alt="Logo" width="200"/>
+</div>
+
+# Personal Portfolio
+
+This is a personal portfolio website built with Next.js, TypeScript, and Tailwind CSS. It showcases my projects, skills, and experience.
+
+## About The Project
+
+This project is a modern and responsive portfolio website designed to highlight my work and capabilities. It features a clean and minimalist design, with smooth animations and transitions.
+
+### Built With
+
+*   [Next.js](https://nextjs.org/) - React framework for production
+*   [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript at scale
+*   [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
+*   [Framer Motion](https://www.framer.com/motion/) - A production-ready motion library for React
+*   [Radix UI](https://www.radix-ui.com/) - Unstyled, accessible components for building high-quality design systems
+*   [Hygraph](https://hygraph.com/) - CMS
 
 ## Getting Started
 
-First, run the development server:
+To get a local copy up and running follow these simple steps.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*   npm
+    ```sh
+    npm install npm@latest -g
+    ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Installation
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1.  Clone the repo
+    ```sh
+    git clone https://github.com/your_username_/your_project_name.git
+    ```
+2.  Install NPM packages
+    ```sh
+    npm install
+    ```
+3.  Create a `.env.local` file and add your environment variables (see `.env.example`)
+4.  Run the development server
+    ```sh
+    npm run dev
+    ```
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Distributed under the MIT License. See `LICENSE` for more information.
